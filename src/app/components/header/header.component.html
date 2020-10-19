@@ -1,35 +1,208 @@
-<header class="header d-flex flex-row">
-    <div class="header_content d-flex flex-row align-items-center">
-        <!-- Logo -->
-        <div class="logo_container">
-            <div class="logo">
-                <img src="images/logo.png" alt="">
-                <span>course</span>
+<!-- Main Header-->
+<header class="main-header">
+
+    <!-- Header Upper -->
+    <div class="header-upper">
+        <div class="outer-container">
+            <div class="clearfix">
+
+                <!-- Header Left -->
+                <div class="header-left clearfix">
+
+                    <!-- Left Sidebar Btn -->
+                    <div class="left-sidebar-btn hidden-bar-opener">
+                        <span class="icon flaticon-menu-2"></span>
+                    </div>
+
+                    <div class="pull-left logo-box">
+                        <div class="logo">
+                            <a href="index.html"><img src="https://www.unas.edu.pe/investigacion/sites/default/files/clientes/iiap-logo.png" width="180" height="50" alt="" title=""></a>
+                        </div>
+                        <div class="dark-layout-logo">
+                            <a href="index.html"><img src="http://demo.auburnforest.com/html/akadimia/akadimia/images/logo-4.png" alt="" title=""></a>
+                        </div>
+                    </div>
+
+                    <!-- Search -->
+                    <div class="search-box">
+                        <form method="post" action="contact.html">
+                            <div class="form-group">
+                                <input type="search" name="search-field" value="" placeholder="Buscar curso(s)" required>
+                                <button type="submit"><span class="icon fa fa-search"></span></button>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+
+                <!-- Header Right -->
+                <div class="header-right clearfix">
+
+                    <div class="nav-outer clearfix">
+
+                        <!-- Main Menu -->
+                        <nav class="main-menu navbar-expand-md">
+                            <div class="navbar-header">
+                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                            </div>
+
+                            <div class="navbar-collapse collapse clearfix" id="navbarSupportedContent">
+                                <ul class="navigation clearfix">
+                                    <li class="dropdown"><a href="#">Cursos</a>
+                                        <ul>
+                                            <li><a href="featured-courses.html">Cursos populares</a></li>
+                                            <li><a href="latest-courses.html">Cursos recientes</a></li>
+                                            <li><a href="category.html">Categorías de cursos</a></li>
+                                            <li><a href="course-detail.html">Detalle de Curso (pagina)</a></li>
+                                            <li><a href="course-lesson.html">Leccion de curso (pagina)</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown"><a href="#">Docente</a>
+                                        <ul>
+                                            <li><a href="dashboard.html">Dashboard del docente</a></li>
+                                            <li><a href="manage-course.html">Administrar curso</a></li>
+                                            <li><a href="edit-course.html">Editar curso</a></li>
+                                            <li><a href="earning.html">Ganancias</a></li>
+                                            <li><a href="instructor-profile.html">Perfil del docente</a></li>
+                                            <li><a href="team.html">Team</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown"><a href="#">Estudiante</a>
+                                        <ul>
+                                            <li><a href="enrolled-courses.html">Cursos inscritos</a></li>
+                                            <li><a href="certificate.html">Certificado</a></li>
+                                            <li><a href="test.html">Quiz</a></li>
+                                            <li><a href="result.html">Quiz Result</a></li>
+                                            <li><a href="student-profile.html">Perfil del estudiante</a></li>
+                                        </ul>
+                                    </li>
+                                    <!---
+                                    <li class="dropdown"><a href="#">Pages</a>
+                                        <ul>
+                                            <li><a href="price.html">Subscription</a></li>
+                                            <li><a href="blog.html">Blog</a></li>
+                                            <li><a href="blog-detail.html">Blog Detail</a></li>
+                                            <li><a href="not-found.html">Error Page</a></li>
+                                            <li><a href="coming-soon.html">Coming Soon</a></li>
+                                            <li><a href="checkout.html">Checkout</a></li>
+                                        </ul>
+                                    </li>-->
+                                </ul>
+                            </div>
+
+                        </nav>
+
+                    </div>
+
+                    <!-- Options Box -->
+                    <div class="options-box clearfix">
+
+                        <!-- Message Box -->
+                        <div class="message-box">
+                            <a href="#" class="icon flaticon-envelope"></a>
+                        </div>
+                        <!-- End Message Box -->
+
+                        <!-- Notification Box -->
+                        <div class="notification-box">
+                            <div class="dropdown">
+                                <button class="notification-box-btn dropdown-toggle" type="button" id="dropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="flaticon-notification"></span><i class="notification-alert"></i></button>
+                                <div class="dropdown-menu pull-right cart-panel" aria-labelledby="dropdownMenu">
+
+                                    <div class="notification-block">
+                                        <div class="inner">
+                                            <div class="image"><img src="images/resource/author-1.jpg" alt="" /></div>
+                                            <h3><a href="#">Jessica Parl</a></h3>
+                                            <div class="notification-text">It is a long established fact that a most reader will be distracted by the way readable</div>
+                                            <div class="post-time">15 min ago</div>
+                                        </div>
+                                    </div>
+                                    <div class="notification-block">
+                                        <div class="inner">
+                                            <div class="image"><img src="images/resource/author-2.jpg" alt="" /></div>
+                                            <h3><a href="#">David John</a></h3>
+                                            <div class="notification-text">It is a long established fact that a like reader will</div>
+                                            <div class="post-time">15 min ago</div>
+                                        </div>
+                                    </div>
+                                    <div class="notification-block">
+                                        <div class="inner">
+                                            <div class="image"><img src="images/resource/author-3.jpg" alt="" /></div>
+                                            <h3><a href="#">Jonathon Deo</a></h3>
+                                            <div class="notification-text">It is a long established fact that a reader will</div>
+                                            <div class="post-time">15 min ago</div>
+                                        </div>
+                                    </div>
+
+                                    <a href="#" class="view">View All</a>
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Notification Box -->
+
+                        <!-- Profile Box -->
+                        <div class="profile-box dropdown" id="someElementID5">
+                            <div class="btn btn-default dropdown-toggle">
+                                <span class="profile-image"><img src="images/resource/author-4.jpg" alt="" /></span> <i class="arrow flaticon-down-arrow"></i>
+                            </div>
+                            <div class="profile-content">
+                                <div class="setting"><a href="setting.html">Settings</a></div>
+                                <!-- Dark Mode -->
+                                <div class="dark-mode">
+                                    <div class="clearfix">
+                                        <div class="pull-left">
+                                            <div class="mode"><span class="icon"><img src="assets/images/icons/moon.png" alt="" /></span> Dark Mode</div>
+                                        </div>
+                                        <div class="pull-right">
+                                            <!-- Dark Btns -->
+                                            <ul class="dark-buttons clearfix">
+                                                <li data-tab="#" class="off">Off</li>
+                                                <li class="boll"><span class="round"></span></li>
+                                                <li data-tab="#" class="on">On</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Pages -->
+                                <ul class="pages">
+                                    <li><a href="login.html">Sign In</a></li>
+                                    <li><a href="sign-up.html">Sign Up</a></li>
+                                    <li><a href="feedback.html">Feedback</a></li>
+                                    <li><a href="contact.html">Contact Us</a></li>
+                                    <li><a href="help.html">Help</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
             </div>
         </div>
+    </div>
+    <!--End Header Upper-->
 
-        <!-- Main Navigation -->
-        <nav class="main_nav_container">
-            <div class="main_nav">
-                <ul class="main_nav_list">
-                    <li class="main_nav_item"><a href="#">home</a></li>
-                    <li class="main_nav_item"><a href="#">about us</a></li>
-                    <li class="main_nav_item"><a href="courses.html">courses</a></li>
-                    <li class="main_nav_item"><a href="elements.html">elements</a></li>
-                    <li class="main_nav_item"><a href="news.html">news</a></li>
-                    <li class="main_nav_item"><a href="contact.html">contact</a></li>
-                </ul>
+    <!-- Mobile Menu  -->
+    <div class="mobile-menu">
+        <div class="menu-backdrop"></div>
+        <div class="close-btn"><span class="icon fa fa-remove"></span></div>
+
+        <nav class="menu-box">
+            <div class="nav-logo">
+                <a href="index.html"><img src="images/logo.png" alt="" title=""></a>
+            </div>
+            <div class="menu-outer">
+                <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
             </div>
         </nav>
     </div>
-    <div class="header_side d-flex flex-row justify-content-center align-items-center">
-        <img src="images/phone-call.svg" alt="">
-        <span>+43 4566 7788 2457</span>
-    </div>
-
-    <!-- Hamburger -->
-    <div class="hamburger_container">
-        <i class="fas fa-bars trans_200"></i>
-    </div>
+    <!-- End Mobile Menu -->
 
 </header>
+<!--End Main Header -->
