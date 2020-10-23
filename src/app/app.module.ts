@@ -1,14 +1,21 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { FormsModule } from '@angular/forms';
+
+//Services
+import { CargarScriptsService } from './services/cargar-scripts.service';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
-import { PageWrapperComponent } from './components/page-wrapper/page-wrapper.component';
-import { PageContentComponent } from './components/page-content/page-content.component';
-import { SidebarNavComponent } from './components/sidebar-nav/sidebar-nav.component';
+import { LeftSidebarComponent } from './components/left-sidebar/left-sidebar.component';
+import { CarouselModule } from 'ngx-owl-carousel-o';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 @NgModule({
   declarations: [
@@ -16,15 +23,17 @@ import { SidebarNavComponent } from './components/sidebar-nav/sidebar-nav.compon
     HeaderComponent,
     FooterComponent,
     HomeComponent,
-    PageWrapperComponent,
-    PageContentComponent,
-    SidebarNavComponent
+    LeftSidebarComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    CarouselModule,
+    NgbModule,
+    FormsModule,
+    BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [CargarScriptsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
