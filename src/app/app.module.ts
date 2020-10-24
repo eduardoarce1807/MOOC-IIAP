@@ -15,6 +15,18 @@ import { LeftSidebarComponent } from './components/left-sidebar/left-sidebar.com
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SettingsComponent } from './components/settings/settings.component';
+import { HelpComponent } from './components/help/help.component';
+import { HeaderInstructorComponent } from './cInstructor/header-instructor/header-instructor.component';
+import { LeftSidebarInstructorComponent } from './cInstructor/left-sidebar-instructor/left-sidebar-instructor.component';
+import { DashboardInstructorComponent } from './cInstructor/dashboard-instructor/dashboard-instructor.component';
+import { CreateCourseComponent } from './cInstructor/create-course/create-course.component';
+import { FooterInstructorComponent } from './cInstructor/footer-instructor/footer-instructor.component';
+import { InstructorProfileComponent } from './components/instructor-profile/instructor-profile.component';
+import { InstructorProfilePublicComponent } from './components/instructor-profile-public/instructor-profile-public.component';
+import { AboutUsComponent } from './cIIAP/about-us/about-us.component';
+import { HeaderIiapComponent } from './cIIAP/header-iiap/header-iiap.component';
+import { FooterIiapComponent } from './cIIAP/footer-iiap/footer-iiap.component';
 
 
 @NgModule({
@@ -23,7 +35,19 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HeaderComponent,
     FooterComponent,
     HomeComponent,
-    LeftSidebarComponent
+    LeftSidebarComponent,
+    SettingsComponent,
+    HelpComponent,
+    HeaderInstructorComponent,
+    LeftSidebarInstructorComponent,
+    DashboardInstructorComponent,
+    CreateCourseComponent,
+    FooterInstructorComponent,
+    InstructorProfileComponent,
+    InstructorProfilePublicComponent,
+    AboutUsComponent,
+    HeaderIiapComponent,
+    FooterIiapComponent
   ],
   imports: [
     BrowserModule,

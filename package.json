@@ -24,6 +24,7 @@
     "@angular/router": "~10.0.5",
     "@ng-bootstrap/ng-bootstrap": "^7.0.0",
     "@popperjs/core": "^2.5.3",
+    "@types/jquery-steps": "^1.1.9",
     "bootstrap": "^4.5.3",
     "jquery": "^3.5.1",
     "ngx-owl-carousel-o": "^4.0.0",

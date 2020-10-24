@@ -7,7 +7,7 @@ export class CargarScriptsService {
 
   constructor() { }
 
-  CargaJS( archivos:string[] ){
+  JSUser( archivos:string[] ){
     for(let archivo of archivos){
       let script = document.createElement("script");
       script.src = "../assets/js/"+ archivo + ".js";
@@ -15,30 +15,25 @@ export class CargarScriptsService {
       body.appendChild( script );
     }
   }
-  CargaVendor( archivos:string[] ){
+
+  CSSUser( archivos:string[] ){
     for(let archivo of archivos){
-      let script = document.createElement("script");
-      script.src = "../assets/vendor/"+ archivo + ".js";
-      let body = document.getElementsByTagName("body")[0];
-      body.appendChild( script );
+      let css = document.createElement("link");
+      css.href = archivo;
+      css.rel = "stylesheet";
+      let head = document.getElementsByTagName("head")[0];
+      head.appendChild(css);
     }
   }
-  CargaScr( archivos:string[] ){
+
+  CSSUser1( archivos:string[] ){
     for(let archivo of archivos){
-      let script = document.createElement("script");
-      script.src = archivo + ".js";
-      let body = document.getElementsByTagName("head")[0];
-      body.appendChild( script );
-    }
-  }
-  CargaScript( archivos:string[], integridades: string[] ){
-    for(let archivo of archivos){
-      let script = document.createElement("script");
-      script.integrity = integridades + "";
-      script.src = archivo + ".js";
-      script.crossOrigin = "anonymous";
-      let body = document.getElementsByTagName("body")[0];
-      body.appendChild( script );
+      let css = document.createElement("link");
+      css.href = archivo;
+      css.rel = "stylesheet";
+      css.type = "text/css";
+      let head = document.getElementsByTagName("head")[0];
+      head.appendChild(css);
     }
   }
 
