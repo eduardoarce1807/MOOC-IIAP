@@ -1,0 +1,35 @@
+<div class="card border-light mb-3">
+    <div class="card-header">Clientes</div>
+    <div class="card-body">
+        <h5 class="card-title">lista de cliente</h5>
+        <button class="btn btn-rounded btn-primary" type="button" [routerLink]="['/clientes/form']">
+            Crear Cliente
+        </button>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>nombre</th>
+                    <th>apellido</th>
+                    <th>email</th>
+                    <th>fecha</th>
+
+                </tr>
+
+            </thead>
+            <tbody>
+                <tr *ngFor="let iterador of clientes">
+
+                    <td>{{iterador.id}}</td>
+                    <td>{{iterador.nombre}}</td>
+                    <td>{{iterador.apellido}}</td>
+                    <td>{{iterador.email}}</td>
+                    <td>{{iterador.creatAt}}</td>
+
+                </tr>
+
+            </tbody>
+        </table>
+
+    </div>
+</div>

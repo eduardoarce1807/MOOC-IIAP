@@ -4,11 +4,11 @@ declare var jQuery: any;
 declare var $: any;
 
 @Component({
-  selector: 'app-about-us',
-  templateUrl: './about-us.component.html',
-  styleUrls: ['./about-us.component.css']
+  selector: 'app-shopping-cart',
+  templateUrl: './shopping-cart.component.html',
+  styleUrls: ['./shopping-cart.component.css']
 })
-export class AboutUsComponent implements OnInit {
+export class ShoppingCartComponent implements OnInit {
 
   constructor() { }
 

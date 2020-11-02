@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { CargarScriptsService } from './services/cargar-scripts.service';
 
@@ -7,13 +7,13 @@ import { CargarScriptsService } from './services/cargar-scripts.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'MOOC-IIAP';
 
-  constructor( private CS:CargarScriptsService ) {
+  constructor() { }
 
+  ngOnInit(): void{
     
-
   }
 
 }

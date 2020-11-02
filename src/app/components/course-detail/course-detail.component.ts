@@ -1,23 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 
-
-
 declare var jQuery: any;
 declare var $: any;
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  selector: 'app-course-detail',
+  templateUrl: './course-detail.component.html',
+  styleUrls: ['./course-detail.component.css']
 })
-export class HomeComponent implements OnInit {
+export class CourseDetailComponent implements OnInit {
 
-  constructor() {
-
-  }
+  constructor() { }
 
   ngOnInit(): void {
 
+    $('#wrpr').addClass('wrapper _bg4586');
     // === Dropdown === //
 
     $('.ui.dropdown')
@@ -295,7 +292,6 @@ export class HomeComponent implements OnInit {
       }, false);
 
     })(window, document);
-
   }
 
 }

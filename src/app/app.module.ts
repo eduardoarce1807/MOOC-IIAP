@@ -6,6 +6,9 @@ import { FormsModule } from '@angular/forms';
 //Services
 import { CargarScriptsService } from './services/cargar-scripts.service';
 
+//Rutas
+import { app_routing } from './app.routes';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -27,6 +30,17 @@ import { InstructorProfilePublicComponent } from './components/instructor-profil
 import { AboutUsComponent } from './cIIAP/about-us/about-us.component';
 import { HeaderIiapComponent } from './cIIAP/header-iiap/header-iiap.component';
 import { FooterIiapComponent } from './cIIAP/footer-iiap/footer-iiap.component';
+import { ShoppingCartComponent } from './cIIAP/shopping-cart/shopping-cart.component';
+import { ClientesComponent } from './components/clientes/clientes.component';
+
+/////////////////////
+
+import { HttpClientModule} from '@angular/common/http';
+
+import {ClienteService} from './services/cliente.service';
+import { CourseDetailComponent } from './components/course-detail/course-detail.component';
+import { CoursesInstructorComponent } from './cInstructor/courses-instructor/courses-instructor.component';
+import { AnalyticsInstructorComponent } from './cInstructor/analytics-instructor/analytics-instructor.component';
 
 
 @NgModule({
@@ -47,7 +61,12 @@ import { FooterIiapComponent } from './cIIAP/footer-iiap/footer-iiap.component';
     InstructorProfilePublicComponent,
     AboutUsComponent,
     HeaderIiapComponent,
-    FooterIiapComponent
+    FooterIiapComponent,
+    ShoppingCartComponent,
+    ClientesComponent,
+    CourseDetailComponent,
+    CoursesInstructorComponent,
+    AnalyticsInstructorComponent
   ],
   imports: [
     BrowserModule,
@@ -55,9 +74,15 @@ import { FooterIiapComponent } from './cIIAP/footer-iiap/footer-iiap.component';
     CarouselModule,
     NgbModule,
     FormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    BrowserModule,
+    HttpClientModule,
+    app_routing
   ],
-  providers: [CargarScriptsService],
+  providers: [
+    CargarScriptsService,
+    ClienteService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -31,6 +31,7 @@ export class LeftSidebarInstructorComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
     // === Dropdown === //
 
     $('.ui.dropdown')
@@ -188,6 +189,11 @@ export class LeftSidebarInstructorComponent implements OnInit {
       $('.return-departure-dts').slideUp();
       $('[data-method="' + $value + '"]').slideDown();
     });
+
+
+
+
+
 
     //////////////////////////////////////////////////////////////////////////////////////////////
 
