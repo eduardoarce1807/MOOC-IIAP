@@ -1,20 +1,22 @@
-<!-- <app-header-iiap></app-header-iiap> -->
 
-<!-- <app-header></app-header> -->
-<!-- <app-left-sidebar></app-left-sidebar> -->
+<app-header-iiap id="hdr-iiap"></app-header-iiap>
 
-<app-header-instructor></app-header-instructor>
-<app-left-sidebar-instructor></app-left-sidebar-instructor>
+<app-header id="hdr-est"></app-header>
+<app-left-sidebar id="lsb-est"></app-left-sidebar>
+
+<app-header-instructor id="hdr-inst"></app-header-instructor>
+<app-left-sidebar-instructor id="lsb-inst"></app-left-sidebar-instructor>
+
 <div id="wrpr" class="wrapper">
+
+    <router-outlet></router-outlet>
 
     <!-- <app-shopping-cart></app-shopping-cart> -->
     <!-- <app-about-us></app-about-us> -->
 
-    <!-- <app-footer-iiap></app-footer-iiap> -->
+    <app-footer-iiap id="ftr-iiap"></app-footer-iiap>
 
     <!----------------------------------------------------------->
-
-    <!-- <router-outlet></router-outlet> -->
 
     <!-- <app-home></app-home> -->
     <!-- <app-settings></app-settings> -->
@@ -22,15 +24,17 @@
     <!-- <app-instructor-profile></app-instructor-profile> -->
     <!-- <app-instructor-profile-public></app-instructor-profile-public> -->
     
-    <!-- <app-footer></app-footer> -->
+    <app-footer id="ftr-est"></app-footer>
 
     <!----------------------------------------------------------->
+
+    <!-- <app-pruebas></app-pruebas> -->
 
     <!-- <app-dashboard-instructor></app-dashboard-instructor> -->
     <!-- <app-courses-instructor></app-courses-instructor> -->
     <!-- <app-analytics-instructor></app-analytics-instructor> -->
-    <app-create-course></app-create-course>
+    <!-- <app-create-course></app-create-course> -->
 
-    <app-footer-instructor></app-footer-instructor>
+    <app-footer-instructor id="ftr-inst"></app-footer-instructor>
 
 </div>

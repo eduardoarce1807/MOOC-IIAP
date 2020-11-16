@@ -2,32 +2,32 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12">
-                <h2 class="st_title"><i class='uil uil-cog'></i> Setting</h2>
+                <h2 class="st_title"><i class='uil uil-cog'></i> Configuración</h2>
                 <div class="setting_tabs">
                     <ul class="nav nav-pills mb-4" id="pills-tab" role="tablist">
                         <li class="nav-item">
                             <a class="nav-link active" id="pills-account-tab" data-toggle="pill" href="#pills-account"
-                                role="tab" aria-selected="true">Account</a>
+                                role="tab" aria-selected="true">Cuenta</a>
                         </li>
-                        <li class="nav-item">
+                        <!-- <li class="nav-item">
                             <a class="nav-link" id="pills-notification-tab" data-toggle="pill"
                                 href="#pills-notification" role="tab" aria-selected="false">Notification</a>
-                        </li>
-                        <li class="nav-item">
+                        </li> -->
+                        <!-- <li class="nav-item">
                             <a class="nav-link" id="pills-privacy-tab" data-toggle="pill" href="#pills-privacy"
                                 role="tab" aria-selected="false">Privacy</a>
-                        </li>
+                        </li> -->
                         <li class="nav-item">
                             <a class="nav-link" id="pills-bllingpayment-tab" data-toggle="pill"
-                                href="#pills-bllingpayment" role="tab" aria-selected="false">Billing and Payouts</a>
+                                href="#pills-bllingpayment" role="tab" aria-selected="false">Facturación</a>
                         </li>
-                        <li class="nav-item">
+                        <!-- <li class="nav-item">
                             <a class="nav-link" id="pills-api-tab" data-toggle="pill" href="#pills-api" role="tab"
                                 aria-selected="false">API Clients</a>
-                        </li>
+                        </li> -->
                         <li class="nav-item">
                             <a class="nav-link" id="pills-closeaccount-tab" data-toggle="pill"
-                                href="#pills-closeaccount" role="tab" aria-selected="false">Close Account</a>
+                                href="#pills-closeaccount" role="tab" aria-selected="false">Cerrar Cuenta</a>
                         </li>
                     </ul>
                 </div>
@@ -35,13 +35,12 @@
                     <div class="tab-pane fade show active" id="pills-account" role="tabpanel"
                         aria-labelledby="pills-account-tab">
                         <div class="account_setting">
-                            <h4>Your Cursus Account</h4>
-                            <p>This is your public presence on Cursus. You need a account to upload your paid courses,
-                                comment on courses, purchased by students, or earning.</p>
+                            <h4>Tu cuenta</h4>
+                            <p>Esta es una cuenta pública del IIAP. Aquí puedes actualizar tu información.</p>
                             <div class="basic_profile">
                                 <div class="basic_ptitle">
-                                    <h4>Basic Profile</h4>
-                                    <p>Add information about yourself</p>
+                                    <h4>Perfil Básico</h4>
+                                    <p>Edita tu información de perfil</p>
                                 </div>
                                 <div class="basic_form">
                                     <div class="row">
@@ -51,8 +50,8 @@
                                                     <div class="ui search focus mt-30">
                                                         <div class="ui left icon input swdh11 swdh19">
                                                             <input class="prompt srch_explore" type="text" name="name"
-                                                                value="Joginder" id="id[name]" required=""
-                                                                maxlength="64" placeholder="First Name">
+                                                                 id="id[name]" required=""
+                                                                maxlength="64" placeholder="Nombres">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -60,12 +59,12 @@
                                                     <div class="ui search focus mt-30">
                                                         <div class="ui left icon input swdh11 swdh19">
                                                             <input class="prompt srch_explore" type="text"
-                                                                name="surname" value="Singh" id="id[surname]"
-                                                                required="" maxlength="64" placeholder="Last Name">
+                                                                name="surname"  id="id[surname]" value="Apellidos"
+                                                                required="" maxlength="64" placeholder="Apellidos">
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="col-lg-12">
+                                                <!-- <div class="col-lg-12">
                                                     <div class="ui search focus mt-30">
                                                         <div class="ui left icon input swdh11 swdh19">
                                                             <input class="prompt srch_explore" type="text"
@@ -78,17 +77,15 @@
                                                         <div class="help-block">Add a professional headline like,
                                                             "Engineer at Cursus" or "Architect."</div>
                                                     </div>
-                                                </div>
+                                                </div> -->
                                                 <div class="col-lg-12">
                                                     <div class="ui search focus mt-30">
                                                         <div class="ui form swdh30">
                                                             <div class="field">
                                                                 <textarea rows="3" name="description" id="id_about"
-                                                                    placeholder="Write a little description about you..."></textarea>
+                                                                    placeholder="Escribe una descripción tuya..."></textarea>
                                                             </div>
                                                         </div>
-                                                        <div class="help-block">Links and coupon codes are not permitted
-                                                            in this section.</div>
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-12">
@@ -99,7 +96,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="basic_profile1">
+                            <!-- <div class="basic_profile1">
                                 <div class="basic_ptitle">
                                     <h4>Profile Links</h4>
                                 </div>
@@ -179,11 +176,11 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <button class="save_btn" type="submit">Save Changes</button>
+                            </div> -->
+                            <button class="save_btn" type="submit">Guardar Cambios</button>
                         </div>
                     </div>
-                    <div class="tab-pane fade" id="pills-notification" role="tabpanel"
+                    <!-- <div class="tab-pane fade" id="pills-notification" role="tabpanel"
                         aria-labelledby="pills-notification-tab">
                         <div class="account_setting">
                             <h4>Notifications - Choose when and how to be notified</h4>
@@ -255,8 +252,8 @@
                             </div>
                             <button class="save_btn" type="submit">Save Changes</button>
                         </div>
-                    </div>
-                    <div class="tab-pane fade" id="pills-privacy" role="tabpanel" aria-labelledby="pills-privacy-tab">
+                    </div> -->
+                    <!-- <div class="tab-pane fade" id="pills-privacy" role="tabpanel" aria-labelledby="pills-privacy-tab">
                         <div class="account_setting">
                             <h4>Privacy</h4>
                             <p>Modify your privacy settings here.</p>
@@ -279,26 +276,25 @@
                             </div>
                             <button class="save_btn" type="submit">Save Changes</button>
                         </div>
-                    </div>
+                    </div> -->
                     <div class="tab-pane fade" id="pills-bllingpayment" role="tabpanel"
                         aria-labelledby="pills-bllingpayment-tab">
                         <div class="account_setting">
-                            <h4>Billing and Payouts</h4>
-                            <p>Want to charge for a course? Provide your payment info and opt in for our promotional
-                                programs</p>
+                            <h4>Facturación</h4>
+                            <p>Guarda tu dirección para tus boletas de compra en el futuro.</p>
                             <div class="basic_form">
                                 <div class="row">
                                     <div class="col-lg-8">
                                         <div class="basic_ptitle mt-30">
-                                            <h4>Billing Address</h4>
+                                            <h4>Dirección de Facturación</h4>
                                         </div>
                                         <div class="row">
                                             <div class="col-lg-6">
                                                 <div class="ui search focus mt-30">
                                                     <div class="ui left icon input swdh11 swdh19">
                                                         <input class="prompt srch_explore" type="text" name="name"
-                                                            value="Joginder" id="id[name1]" required="" maxlength="64"
-                                                            placeholder="First Name">
+                                                             id="id[name1]" required="" maxlength="64"
+                                                            placeholder="Nombres">
                                                     </div>
                                                 </div>
                                             </div>
@@ -306,12 +302,12 @@
                                                 <div class="ui search focus mt-30">
                                                     <div class="ui left icon input swdh11 swdh19">
                                                         <input class="prompt srch_explore" type="text" name="surname"
-                                                            value="Singh" id="id[surname1]" required="" maxlength="64"
-                                                            placeholder="Last Name">
+                                                             id="id[surname1]" required="" maxlength="64"
+                                                            placeholder="Apellidos">
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-lg-12">
+                                            <!-- <div class="col-lg-12">
                                                 <div class="ui search focus mt-30">
                                                     <div class="ui left icon input swdh11 swdh19">
                                                         <input class="prompt srch_explore" type="text"
@@ -321,12 +317,12 @@
                                                     <div class="help-block">If you want your invoices addressed to a
                                                         academy. Leave blank to use your full name.</div>
                                                 </div>
-                                            </div>
+                                            </div> -->
                                             <div class="col-lg-12">
                                                 <div class="ui fluid search selection dropdown focus mt-30 cntry152">
                                                     <input type="hidden" name="country" class="prompt srch_explore">
                                                     <i class="dropdown icon"></i>
-                                                    <div class="default text">Select Country</div>
+                                                    <div class="default text">País</div>
                                                     <div class="menu">
                                                         <div class="item" data-value="af"><i
                                                                 class="af flag"></i>Afghanistan</div>
@@ -820,18 +816,8 @@
                                                     <div class="ui left icon input swdh11 swdh19">
                                                         <input class="prompt srch_explore" type="text"
                                                             name="addressname"
-                                                            value="#1234, Sks Nagar, Near MBD Mall, 141001 Ludhiana, Punjab, India"
                                                             id="id_address1" required="" maxlength="64"
-                                                            placeholder="Address Line 1">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-12">
-                                                <div class="ui search focus mt-30">
-                                                    <div class="ui left icon input swdh11 swdh19">
-                                                        <input class="prompt srch_explore" type="text"
-                                                            name="addressname2" id="id_address2" required=""
-                                                            maxlength="64" placeholder="Address Line 2">
+                                                            placeholder="Dirección Física">
                                                     </div>
                                                 </div>
                                             </div>
@@ -839,8 +825,8 @@
                                                 <div class="ui search focus mt-30">
                                                     <div class="ui left icon input swdh11 swdh19">
                                                         <input class="prompt srch_explore" type="text" name="city"
-                                                            value="Ludhiana" id="id_city" required="" maxlength="64"
-                                                            placeholder="City">
+                                                             id="id_city" required="" maxlength="64"
+                                                            placeholder="Ciudad">
                                                     </div>
                                                 </div>
                                             </div>
@@ -848,8 +834,8 @@
                                                 <div class="ui search focus mt-30">
                                                     <div class="ui left icon input swdh11 swdh19">
                                                         <input class="prompt srch_explore" type="text" name="state"
-                                                            value="Punjab" id="id_state" required="" maxlength="64"
-                                                            placeholder="State / Province / Region">
+                                                            id="id_state" required="" maxlength="64"
+                                                            placeholder="Provincia / Región">
                                                     </div>
                                                 </div>
                                             </div>
@@ -857,8 +843,8 @@
                                                 <div class="ui search focus mt-30">
                                                     <div class="ui left icon input swdh11 swdh19">
                                                         <input class="prompt srch_explore" type="text" name="zip"
-                                                            value="141001" id="id_zip" required="" maxlength="64"
-                                                            placeholder="Zip / Postal Code">
+                                                             id="id_zip" required="" maxlength="64"
+                                                            placeholder="Código Postal (ZIP)">
                                                     </div>
                                                 </div>
                                             </div>
@@ -866,8 +852,8 @@
                                                 <div class="ui search focus mt-30">
                                                     <div class="ui left icon input swdh11 swdh19">
                                                         <input class="prompt srch_explore" type="text" name="phone"
-                                                            value="+911234567890" id="id_phone" required=""
-                                                            maxlength="12" placeholder="Phone Number">
+                                                             id="id_phone" required=""
+                                                            maxlength="12" placeholder="Número de Celular">
                                                     </div>
                                                 </div>
                                             </div>
@@ -876,7 +862,7 @@
                                 </div>
                             </div>
                             <div class="divider-1 mb-50"></div>
-                            <div class="basic_form">
+                            <!-- <div class="basic_form">
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <div class="basic_ptitle">
@@ -956,8 +942,8 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="basic_form mt-50">
+                            </div> -->
+                            <!-- <div class="basic_form mt-50">
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <div class="basic_ptitle">
@@ -1037,9 +1023,9 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="divider-1 mb-50"></div>
-                            <div class="basic_form mt-50">
+                            </div> -->
+                            <!-- <div class="divider-1 mb-50"></div> -->
+                            <!-- <div class="basic_form mt-50">
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <div class="basic_ptitle">
@@ -1690,11 +1676,11 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <button class="save_btn" type="submit">Save Changes</button>
+                            </div> -->
+                            <button class="save_btn" type="submit">Guardar Cambios</button>
                         </div>
                     </div>
-                    <div class="tab-pane fade" id="pills-api" role="tabpanel" aria-labelledby="pills-api-tab">
+                    <!-- <div class="tab-pane fade" id="pills-api" role="tabpanel" aria-labelledby="pills-api-tab">
                         <div class="account_setting">
                             <h4>Affiliate API</h4>
                             <p>The Cursus Affiliate API exposes functionalities of Cursus to help developers build
@@ -1704,13 +1690,12 @@
                         <button class="api_btn">Request Affiliate API Client</button>
                         <div class="nt_apt"><i class="uil uil-info-circle"></i> You don't have any API clients yet.
                         </div>
-                    </div>
+                    </div> -->
                     <div class="tab-pane fade" id="pills-closeaccount" role="tabpanel"
                         aria-labelledby="pills-closeaccount-tab">
                         <div class="account_setting">
-                            <h4>Close account</h4>
-                            <p><strong>Warning:</strong> If you close your account, you will be unsubscribed from all
-                                your 5 courses, and will lose access forever.</p>
+                            <h4>Cerrar Cuenta</h4>
+                            <p><strong>Advertencia:</strong> Si cierras tu cuenta, perderás acceso permanente a todos tus cursos inscritos.</p>
                         </div>
                         <div class="row">
                             <div class="col-lg-4">
@@ -1718,11 +1703,11 @@
                                     <div class="ui left icon input swdh11 swdh19">
                                         <input class="prompt srch_explore" type="password" name="yourassword"
                                             id="id_yourpassword" required="" maxlength="64"
-                                            placeholder="Enter Your Password">
+                                            placeholder="Ingresa tu contraseña">
                                     </div>
-                                    <div class="help-block">Are you sure you want to close your account?</div>
                                 </div>
-                                <button class="save_payout_btn mbs20" type="submit">Close Account</button>
+                                <div class="divider-1 mb-50"></div>
+                                <button class="save_payout_btn mbs20" type="submit">Cerrar Cuenta</button>
                             </div>
                         </div>
                     </div>

@@ -14,6 +14,17 @@ export class CourseDetailComponent implements OnInit {
 
   ngOnInit(): void {
 
+    $("#hdr-est").show();
+    $("#lsb-est").show();
+    $("#ftr-est").show();
+
+    $("#hdr-inst").remove();
+    $("#lsb-inst").remove();
+    $("#ftr-inst").remove();
+
+    $("#hdr-iiap").remove();
+    $("#ftr-iiap").remove();
+
     $('#wrpr').addClass('wrapper _bg4586');
     // === Dropdown === //
 

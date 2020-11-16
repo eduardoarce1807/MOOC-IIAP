@@ -15,6 +15,8 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
+    
     // === Dropdown === //
 
     $('.ui.dropdown')

@@ -37,10 +37,14 @@ import { ClientesComponent } from './components/clientes/clientes.component';
 
 import { HttpClientModule} from '@angular/common/http';
 
-import {ClienteService} from './services/cliente.service';
+import {CategoriaService} from './services/categoria.service';
 import { CourseDetailComponent } from './components/course-detail/course-detail.component';
 import { CoursesInstructorComponent } from './cInstructor/courses-instructor/courses-instructor.component';
 import { AnalyticsInstructorComponent } from './cInstructor/analytics-instructor/analytics-instructor.component';
+import { CursoComponent } from './cInstructor/curso/curso.component';
+import { PruebasComponent } from './cInstructor/pruebas/pruebas.component';
+import { ExplorarComponent } from './components/explorar/explorar.component';
+import { FeedbackComponent } from './components/feedback/feedback.component';
 
 
 @NgModule({
@@ -66,7 +70,11 @@ import { AnalyticsInstructorComponent } from './cInstructor/analytics-instructor
     ClientesComponent,
     CourseDetailComponent,
     CoursesInstructorComponent,
-    AnalyticsInstructorComponent
+    AnalyticsInstructorComponent,
+    CursoComponent,
+    PruebasComponent,
+    ExplorarComponent,
+    FeedbackComponent
   ],
   imports: [
     BrowserModule,
@@ -81,7 +89,7 @@ import { AnalyticsInstructorComponent } from './cInstructor/analytics-instructor
   ],
   providers: [
     CargarScriptsService,
-    ClienteService
+    CategoriaService
   ],
   bootstrap: [AppComponent]
 })

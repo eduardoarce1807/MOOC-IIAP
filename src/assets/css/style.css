@@ -3281,10 +3281,6 @@ i.icon2 {
     line-height: 22px;
 }
 
-._rate003 {
-	
-}
-
 ._rate004 {
 	display: flex;
     cursor: pointer;
@@ -4130,7 +4126,7 @@ a.rmv-btn i {
 }
 
 .ui.label.lb12 {
-    background-color: #dedfe !important;
+    background-color: #111111 !important;
     padding: .9999em 1.2em !important;
     color: #686f7a !important;
     border-top-left-radius: 500rem !important;
@@ -4945,7 +4941,7 @@ a.rmv-btn i {
     line-height: 26px;
     padding-top: 27px;
 }
-}
+
 
 .story125 {
     text-align: center;
@@ -5993,7 +5989,7 @@ a.rmv-btn i {
 	background: #34a853 !important;
 }
 
-./* --- Forgot Password Page --- */
+/* --- Forgot Password Page --- */
 
 .main-tabs {
     width: 100%;
