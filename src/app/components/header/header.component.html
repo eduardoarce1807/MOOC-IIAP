@@ -24,54 +24,16 @@
             </div>
         </div>
     </div>
-    <div class="search120">
+    <!-- <div class="search120">
         <div class="ui search">
           <div class="ui left icon input swdh10">
             <input class="prompt srch10" type="text" placeholder="Busca cursos en línea...">
             <i class='uil uil-search-alt icon icon1'></i>
           </div>
         </div>
-    </div>
+    </div> -->
     <div class="header_right">
         <ul>
-            <li>
-                <a href="http://localhost:4200/carrito" class="option_links" title="cart"><i class='uil uil-shopping-cart-alt'></i><!--<span class="noti_count">2</span>--></a>
-            </li>
-            <li class="ui dropdown">
-                <a href="#" class="option_links" title="Notifications"><i class='uil uil-bell'></i><!--<span class="noti_count">3</span>--></a>
-                <div class="menu dropdown_mn">
-                    <a href="#" class="channel_my item">
-                        <div class="profile_link">
-                            <img src="assets/images/left-imgs/img-1.jpg" alt="">
-                            <div class="pd_content">
-                                <h6>Juan</h6>
-                                <p>Like Your Comment On Video <strong>How to create sidebar menu</strong>.</p>
-                                <span class="nm_time">2 min ago</span>
-                            </div>							
-                        </div>							
-                    </a>
-                    <a href="#" class="channel_my item">
-                        <div class="profile_link">
-                            <img src="assets/images/left-imgs/img-2.jpg" alt="">
-                            <div class="pd_content">
-                                <h6>Jassica Smith</h6>
-                                <p>Added New Review In Video <strong>Full Stack PHP Developer</strong>.</p>
-                                <span class="nm_time">12 min ago</span>
-                            </div>							
-                        </div>							
-                    </a>
-                    <a href="#" class="channel_my item">
-                        <div class="profile_link">
-                            <img src="assets/images/left-imgs/img-9.jpg" alt="">
-                            <div class="pd_content">
-                                <p> Your Membership Approved <strong>Upload Video</strong>.</p>
-                                <span class="nm_time">20 min ago</span>
-                            </div>							
-                        </div>							
-                    </a>
-                    <a class="vbm_btn" href="instructor_notifications.html">Ver todo <i class='uil uil-arrow-right'></i></a>
-                </div>
-            </li>
             <li class="ui dropdown">
                 <a href="#" class="opts_account" title="Account">
                     <img src="assets/images/hd_dp.jpg" alt="">
@@ -82,9 +44,9 @@
                             <img src="assets/images/hd_dp.jpg" alt="">
                             <div class="pd_content">
                                 <div class="rhte85">
-                                    <h6>Patrick</h6>
+                                    <h6 id="nom">{{usuA.nombres+' '+usuA.ap_paterno+' '+usuA.ap_materno}}</h6>
                                 </div>
-                                <span>patrick@gmail.com</span>
+                                <span id="cor">{{usuA.correo}}</span>
                             </div>							
                         </div>
                         <a routerLink="/perfil-estudiante" class="dp_link_12">Ver perfil</a>						

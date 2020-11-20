@@ -1,17 +1,16 @@
-import { Tipo_Usu } from "./tipo_usu";
-
 export class Usuario {
 
-    id_usuario: number;
-    nombres: String;
-    apellidos: String;
-    descripcion: String;
-    DNI: String;
-    fecha_nacimiento: Date;
-    sexo: string;
-    usuario: string;
-    clave: string;
-    estado: string;
-    tipo_usu: Tipo_Usu;
+    ID_USUARIO: number;
+    NOMBRES: string;
+    AP_PATERNO: string;
+    AP_MATERNO: string;
+    DESCRIPCION: string;
+    DNI: string;
+    CORREO: string;
+    FECHA_NACIMIENTO: string;
+    SEXO: string;
+    USUARIO: string;
+    CLAVE: string;
+    ESTADO: string;
 
 }

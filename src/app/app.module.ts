@@ -45,6 +45,10 @@ import { CursoComponent } from './cInstructor/curso/curso.component';
 import { PruebasComponent } from './cInstructor/pruebas/pruebas.component';
 import { ExplorarComponent } from './components/explorar/explorar.component';
 import { FeedbackComponent } from './components/feedback/feedback.component';
+import { LoginComponent } from './Login/login/login.component';
+import { RegisterComponent } from './Login/register/register.component';
+import { AuxComponent } from './Login/aux/aux.component';
+import { AuxrComponent } from './Login/auxr/auxr.component';
 
 
 @NgModule({
@@ -74,7 +78,11 @@ import { FeedbackComponent } from './components/feedback/feedback.component';
     CursoComponent,
     PruebasComponent,
     ExplorarComponent,
-    FeedbackComponent
+    FeedbackComponent,
+    LoginComponent,
+    RegisterComponent,
+    AuxComponent,
+    AuxrComponent
   ],
   imports: [
     BrowserModule,

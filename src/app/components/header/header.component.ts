@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { UsuarioLow } from 'src/app/Clases/LowCase/usuarioLow';
+import { CargarScriptsService } from 'src/app/services/cargar-scripts.service';
 
 declare var jQuery: any;
 declare var $: any;
@@ -10,15 +12,26 @@ declare var $: any;
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() {
+  usuA: any;
 
+  constructor() {
   }
 
   ngOnInit(): void {
 
+    var uActivo: any = localStorage.getItem("uActivo"); //Obtener datos de localStorage
+    uActivo = JSON.parse(uActivo); // Covertir a objeto
+    if (uActivo === null) {// Si no existe, creamos un array vacio.
+      uActivo = []; // es es un  array
+    }
+
+    this.usuA = JSON.parse(uActivo[0]);
+
+    //$("#nom").text(d.nombres);
+    //$("#cor").text(d.correo);
+
     
     // === Dropdown === //
-
     $('.ui.dropdown')
       .dropdown()
       ;

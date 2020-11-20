@@ -1,21 +1,16 @@
-import { Categoria } from "./categoria";
-import { Usuario } from "./usuario";
-
-export class Curso {
-
-    id_usuario: number;
-    titulo: String;
-    subtitulo: String;
-    precio: number;
-    ruta_portada: String;
-    url: String;
-    n_modulos: number;
-    estado: String;
-    objetivo: String;
-    perfil_participante: String;
-    metodologia: String;
-    competencias: String;
-    categoria: Categoria;
-    usuario: Usuario;
-
+export class Curso{
+    ID_USUARIO: number;
+    TITULO: String;
+    SUBTITULO: String;
+    PRECIO: number;
+    RUTA_PORTADA: String;
+    URL: String;
+    N_MODULOS: number;
+    ESTADO: String;
+    OBJETIVO: String;
+    PERFIL_PARTICIPANTE: String;
+    METODOLOGIA: String;
+    COMPETENCIAS: String;
+    ID_CATEGORIA_FK: number;
+    ID_USUARIO_FK: number;
 }

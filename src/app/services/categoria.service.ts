@@ -7,7 +7,9 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 
 
-@Injectable()
+@Injectable({
+    providedIn: 'root'
+})
 export class CategoriaService{
 
     private urlEndPoint = 'http://localhost:8086/categorias/all';

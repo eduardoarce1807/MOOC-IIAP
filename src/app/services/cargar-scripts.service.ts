@@ -7,6 +7,15 @@ export class CargarScriptsService {
 
   constructor() { }
 
+  JSTabla( archivos: string[] ){
+    for(let archivo of archivos){
+      let js = document.createElement("script");
+      js.src = archivo;
+      let body = document.getElementsByTagName("body")[0];
+      body.appendChild(js);
+    }
+  }
+
   CSSUser( archivos:string[] ){
     for(let archivo of archivos){
       let css = document.createElement("link");

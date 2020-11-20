@@ -14,6 +14,9 @@ export class ShoppingCartComponent implements OnInit {
 
   ngOnInit(): void {
 
+    $("#login").remove();
+    $("#register").remove();
+
     $("#hdr-iiap").show();
     $("#ftr-iiap").show();
 

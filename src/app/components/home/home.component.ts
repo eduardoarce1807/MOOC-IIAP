@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CargarScriptsService } from '../../services/cargar-scripts.service';
 
+import { RolUsuService } from '../../services/rol-usu.service';
 
 declare var jQuery: any;
 declare var $: any;
@@ -12,7 +13,10 @@ declare var $: any;
 })
 export class HomeComponent implements OnInit {
 
-  constructor(CS: CargarScriptsService) {
+  usuA: any;
+  rol: string;
+
+  constructor(CS: CargarScriptsService, public rol_usuService: RolUsuService) {
     CS.CSSUser([
       "http://fonts.googleapis.com/css?family=Roboto:400,700,500",
       "assets/vendor/unicons-2.0.1/css/unicons.css",
@@ -32,6 +36,10 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
 
+    $("#login").remove();
+
+    $("#register").remove();
+
     $("#hdr-est").show();
     $("#lsb-est").show();
     $("#ftr-est").show();
@@ -42,6 +50,14 @@ export class HomeComponent implements OnInit {
 
     $("#hdr-iiap").remove();
     $("#ftr-iiap").remove();
+
+    var uActivo: any = localStorage.getItem("uActivo"); //Obtener datos de localStorage
+    uActivo = JSON.parse(uActivo); // Covertir a objeto
+    if (uActivo === null) {// Si no existe, creamos un array vacio.
+      uActivo = []; // es es un  array
+    }
+
+    this.usuA = JSON.parse(uActivo[0]);
 
     // === Dropdown === //
 

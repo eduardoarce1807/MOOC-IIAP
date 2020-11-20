@@ -1,46 +1,101 @@
 import { Component, OnInit } from '@angular/core';
-import { RolUsuService } from 'src/app/services/rol-usu.service';
+import { UsuarioService } from 'src/app/services/usuario.service';
+
+import { Router, ActivatedRoute } from '@angular/router';
+
+import { UsuarioLow } from 'src/app/Clases/LowCase/usuarioLow';
+import { Usuario } from 'src/app/Clases/usuario';
 
 declare var jQuery: any;
 declare var $: any;
 
 @Component({
-  selector: 'app-instructor-profile-public',
-  templateUrl: './instructor-profile-public.component.html',
-  styleUrls: ['./instructor-profile-public.component.css']
+  selector: 'app-register',
+  templateUrl: './register.component.html',
+  styleUrls: ['./register.component.css']
 })
-export class InstructorProfilePublicComponent implements OnInit {
+export class RegisterComponent implements OnInit {
 
-  usuA: any;
+  public usuarioLow: UsuarioLow = new UsuarioLow();
+  private titulo: String = "Registro de Usuario";
 
-  constructor( public rol_usuService: RolUsuService ) { }
+  constructor(public usuarioService: UsuarioService,
+    private router: Router,
+    private activatedRoute: ActivatedRoute) { }
+
+  public createUsu(): void {
+
+    console.log(this.usuarioLow);
+
+    var sexo = $("#sexo_f").val();
+
+    this.usuarioLow.sexo = sexo;
+
+    var us = this.usuarioLow;
+    var xd: any;
+    var a = this.usuarioService;
+
+    this.usuarioService.getAll().subscribe(
+      usuarios => { xd = usuarios }
+    );
+
+    setTimeout(
+      function () {
+
+        var checker = true;
+        
+        if ($("#nombres_f").val() == "" ||
+          $("#ap_paterno_f").val() == "" ||
+          $("#ap_materno_f").val() == "" ||
+          $("#dni_f").val() == "" ||
+          $("#fecha_nacimiento_f").val() == "" ||
+          $("#sexo_f").val() == "0" ||
+          $("#correo_f").val() == "" ||
+          $("#usuario_f").val() == "" ||
+          $("#clave_f").val() == ""
+        ) {
+          $("#alerta").show();
+          $("#alerta").text("Por favor, complete todos los campos.");
+        } else {
+          for (var i = 0; i < xd.length; i++) {
+
+            if (us.dni == xd[i].DNI) {
+              $("#alerta").show();
+              $("#alerta").text("Este DNI ya está registrado.");
+              checker = false;
+            }
+            if (us.usuario == xd[i].USUARIO) {
+              $("#alerta").show();
+              $("#alerta").text("Este usuario ya está registrado.");
+              checker = false;
+            }
+            if (us.correo == xd[i].CORREO) {
+              $("#alerta").show();
+              $("#alerta").text("Este correo ya está registrado.");
+              checker = false;
+            }
+          }
+
+        }
+
+        if(checker){
+          $("#alerta").hide();
+          $("#alerta2").show();
+          $("#alerta2").text("Usuario correctamente registrado.");
+          a.create(us).subscribe(
+            (Response) => window.location.href = '/login'
+          );
+        }
+
+      }, 2000);
+
+  }
 
   ngOnInit(): void {
 
-    $("#hdr-est").show();
-    $("#lsb-est").show();
-    $("#ftr-est").show();
 
-    $("#login").remove();
-
-    $("#register").remove();
-
-    $("#hdr-inst").remove();
-    $("#lsb-inst").remove();
-    $("#ftr-inst").remove();
-
-    $("#hdr-iiap").remove();
-    $("#ftr-iiap").remove();
-
-    $('#wrpr').addClass('wrapper _bg4586');
-
-    var uActivo: any = localStorage.getItem("uActivo"); //Obtener datos de localStorage
-    uActivo = JSON.parse(uActivo); // Covertir a objeto
-    if (uActivo === null) {// Si no existe, creamos un array vacio.
-      uActivo = []; // es es un  array
-    }
-
-    this.usuA = JSON.parse(uActivo[0]);
+    $("#alerta").hide();
+    $("#alerta2").hide();
 
     // === Dropdown === //
 
@@ -319,7 +374,6 @@ export class InstructorProfilePublicComponent implements OnInit {
       }, false);
 
     })(window, document);
-
 
   }
 
