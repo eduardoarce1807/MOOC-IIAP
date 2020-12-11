@@ -36,518 +36,592 @@
                             </li>
                         </ul>
                         <div class="step-content">
-                            <div class="step-tab-panel step-tab-info active" id="tab_step1">
-                                <div class="tab-from-content">
-                                    <div class="title-icon">
-                                        <h3 class="title"><i class="uil uil-info-circle"></i>Información General</h3>
-                                    </div>
-                                    <div class="course__form">
-                                        <div class="general_info10">
-                                            <div class="row">
-                                                <div class="col-lg-6 col-md-6">
-                                                    <div class="ui search focus mt-30 lbel25">
-                                                        <label>Título del curso*</label>
-                                                        <div class="ui left icon input swdh19">
-                                                            <input class="prompt srch_explore" type="text"
-                                                                placeholder="Escribe el título de tu curso..." name="title"
-                                                                data-purpose="edit-course-title" maxlength="60"
-                                                                id="main[title]" value="">
-                                                            <div class="badge_num">60</div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-6 col-md-6">
-                                                    <div class="ui search focus mt-30 lbel25">
-                                                        <label>Subtítulo del curso*</label>
-                                                        <div class="ui left icon input swdh19">
-                                                            <input class="prompt srch_explore" type="text"
-                                                                placeholder="Escribe el subtítulo de tu curso..."
-                                                                name="subtitle" data-purpose="edit-course-title"
-                                                                maxlength="60" id="sub[title]" value="">
-                                                            <div class="badge_num2">120</div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-lg-12 col-md-12">
-                                                    <div class="lecture_title">
-                                                        <h4>Descripción</h4>
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-lg-6 col-md-12">
-                                                    <div class="course_des_textarea mt-30 lbel25">
-                                                        <label>Objetivo*</label>
-                                                        <div class="course_des_bg">
-                                                            <!-- <ul class="course_des_ttle">
-                                                                <li><a href="#"><i class="uil uil-bold"></i></a></li>
-                                                                <li><a href="#"><i class="uil uil-italic"></i></a></li>
-                                                                <li><a href="#"><i class="uil uil-list-ul"></i></a></li>
-                                                                <li><a href="#"><i
-                                                                            class="uil uil-left-to-right-text-direction"></i></a>
-                                                                </li>
-                                                                <li><a href="#"><i
-                                                                            class="uil uil-right-to-left-text-direction"></i></a>
-                                                                </li>
-                                                                <li><a href="#"><i class="uil uil-list-ui-alt"></i></a>
-                                                                </li>
-                                                                <li><a href="#"><i class="uil uil-link"></i></a></li>
-                                                                <li><a href="#"><i class="uil uil-text-size"></i></a>
-                                                                </li>
-                                                                <li><a href="#"><i class="uil uil-text"></i></a></li>
-                                                            </ul> -->
-                                                            <div class="textarea_dt">
-                                                                <div class="ui form swdh339">
-                                                                    <div class="field">
-                                                                        <textarea rows="5" name="description"
-                                                                            id="id_course_description"
-                                                                            placeholder="Escribe el objetivo del curso..."></textarea>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-6 col-md-12">
-                                                    <div class="course_des_textarea mt-30 lbel25">
-                                                        <label>Perfil del participante*</label>
-                                                        <div class="course_des_bg">
-                                                            <div class="textarea_dt">
-                                                                <div class="ui form swdh339">
-                                                                    <div class="field">
-                                                                        <textarea rows="5" name="description"
-                                                                            id="id_course_description"
-                                                                            placeholder="Escribe el perfil del participante del curso..."></textarea>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-6 col-md-12">
-                                                    <div class="course_des_textarea mt-30 lbel25">
-                                                        <label>Metodología*</label>
-                                                        <div class="course_des_bg">
-                                                            <div class="textarea_dt">
-                                                                <div class="ui form swdh339">
-                                                                    <div class="field">
-                                                                        <textarea rows="5" name="description"
-                                                                            id="id_course_description"
-                                                                            placeholder="Escribe la metodología de tu curso..."></textarea>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-6 col-md-12">
-                                                    <div class="course_des_textarea mt-30 lbel25">
-                                                        <label>Competencias a alcanzar*</label>
-                                                        <div class="course_des_bg">
-                                                            <div class="textarea_dt">
-                                                                <div class="ui form swdh339">
-                                                                    <div class="field">
-                                                                        <textarea rows="5" name="description"
-                                                                            id="id_course_description"
-                                                                            placeholder="Escribe las competencias esperadas..."></textarea>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                
-                                                <div class="col-lg-6 col-md-6">
-                                                    <div class="mt-30 lbel25">
-                                                        <label>Categoría*</label>
-                                                    </div>
-                                                    <select class="ui hj145 dropdown cntry152 prompt srch_explore">
-                                                        <option value="">Seleccione la categoría</option>
-                                                        <option value="1">Categoría 1</option>
-                                                        <option value="2">Categoría 2</option>
-                                                        <option value="3">Categoría 3</option>
-                                                        <option value="4">Categoría 4</option>
-                                                    </select>
-                                                </div>
-                                                
-                                            </div>
+                                <div class="step-tab-panel step-tab-info active" id="tab_step1">
+                                    <div class="tab-from-content">
+                                        <div class="title-icon">
+                                            <h3 class="title"><i class="uil uil-info-circle"></i>Información General</h3>
                                         </div>
-                                        <div class="price_course">
-                                            <div class="row">
-                                                <div class="col-lg-12">
-                                                    <div class="price_title">
-                                                        <h4><i class="uil uil-dollar-sign-alt"></i>Precio</h4>
+                                        <div class="course__form">
+                                            <div class="general_info10">
+                                                <div class="row">
+                                                    <div class="col-lg-6 col-md-6">
+                                                        <div class="ui search focus mt-30 lbel25">
+                                                            <label>Título del curso*</label>
+                                                            <div class="ui left icon input swdh19">
+                                                                <input [(ngModel)]="cursoLow.titulo" class="prompt srch_explore" type="text"
+                                                                    placeholder="Escribe el título de tu curso..."
+                                                                    name="curso_titulo" data-purpose="edit-course-title"
+                                                                    maxlength="60" id="curso_titulo" value="">
+                                                                <div class="badge_num">60</div>
+                                                            </div>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                <div class="col-lg-2 col-md-3 col-sm-6">
-                                                    <div class="mt-30 lbel25">
-                                                        <label>¿El curso será de pago?*</label>
+                                                    <div class="col-lg-6 col-md-6">
+                                                        <div class="ui search focus mt-30 lbel25">
+                                                            <label>Subtítulo del curso*</label>
+                                                            <div class="ui left icon input swdh19">
+                                                                <input [(ngModel)]="cursoLow.subtitulo" class="prompt srch_explore" type="text"
+                                                                    placeholder="Escribe el subtítulo de tu curso..."
+                                                                    name="curso_subtitulo" data-purpose="edit-course-title"
+                                                                    maxlength="60" id="curso_subtitulo" value="">
+                                                                <div class="badge_num2">120</div>
+                                                            </div>
+                                                        </div>
                                                     </div>
-                                                    <select class="ui hj145 dropdown cntry152 prompt srch_explore">
-                                                        <option value="">Seleccione...</option>
-                                                        <option value="1">Sí</option>
-                                                        <option value="2">No</option>
-                                                    </select>
+
+                                                    <div class="col-lg-12 col-md-12">
+                                                        <div class="lecture_title">
+                                                            <h4>Descripción</h4>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-lg-6 col-md-12">
+                                                        <div class="course_des_textarea mt-30 lbel25">
+                                                            <label>Objetivo*</label>
+                                                            <div class="course_des_bg">
+                                                                <!-- <ul class="course_des_ttle">
+                                                                    <li><a href="#"><i class="uil uil-bold"></i></a></li>
+                                                                    <li><a href="#"><i class="uil uil-italic"></i></a></li>
+                                                                    <li><a href="#"><i class="uil uil-list-ul"></i></a></li>
+                                                                    <li><a href="#"><i
+                                                                                class="uil uil-left-to-right-text-direction"></i></a>
+                                                                    </li>
+                                                                    <li><a href="#"><i
+                                                                                class="uil uil-right-to-left-text-direction"></i></a>
+                                                                    </li>
+                                                                    <li><a href="#"><i class="uil uil-list-ui-alt"></i></a>
+                                                                    </li>
+                                                                    <li><a href="#"><i class="uil uil-link"></i></a></li>
+                                                                    <li><a href="#"><i class="uil uil-text-size"></i></a>
+                                                                    </li>
+                                                                    <li><a href="#"><i class="uil uil-text"></i></a></li>
+                                                                </ul> -->
+                                                                <div class="textarea_dt">
+                                                                    <div class="ui form swdh339">
+                                                                        <div class="field">
+                                                                            <textarea [(ngModel)]="cursoLow.objetivo" rows="5" name="curso_objetivo"
+                                                                                id="curso_objetivo"
+                                                                                placeholder="Escribe el objetivo del curso..."></textarea>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6 col-md-12">
+                                                        <div class="course_des_textarea mt-30 lbel25">
+                                                            <label>Perfil del participante*</label>
+                                                            <div class="course_des_bg">
+                                                                <div class="textarea_dt">
+                                                                    <div class="ui form swdh339">
+                                                                        <div class="field">
+                                                                            <textarea [(ngModel)]="cursoLow.perfil_participante" rows="5" name="curso_perfil_participante"
+                                                                                id="curso_perfil_participante"
+                                                                                placeholder="Escribe el perfil del participante del curso..."></textarea>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6 col-md-12">
+                                                        <div class="course_des_textarea mt-30 lbel25">
+                                                            <label>Metodología*</label>
+                                                            <div class="course_des_bg">
+                                                                <div class="textarea_dt">
+                                                                    <div class="ui form swdh339">
+                                                                        <div class="field">
+                                                                            <textarea [(ngModel)]="cursoLow.metodologia" rows="5" name="curso_metodologia"
+                                                                                id="curso_metodologia"
+                                                                                placeholder="Escribe la metodología de tu curso..."></textarea>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6 col-md-12">
+                                                        <div class="course_des_textarea mt-30 lbel25">
+                                                            <label>Competencias a alcanzar*</label>
+                                                            <div class="course_des_bg">
+                                                                <div class="textarea_dt">
+                                                                    <div class="ui form swdh339">
+                                                                        <div class="field">
+                                                                            <textarea [(ngModel)]="cursoLow.competencias" rows="5" name="curso_competencias"
+                                                                                id="curso_competencias"
+                                                                                placeholder="Escribe las competencias esperadas..."></textarea>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-lg-6 col-md-6">
+                                                        <div class="mt-30 lbel25">
+                                                            <label>Categoría*</label>
+                                                        </div>
+                                                        <select id="curso_categoria" class="ui hj145 dropdown cntry152 prompt srch_explore">
+                                                            <option value="0">Seleccione la categoría</option>
+                                                            <option value="1">Categoría 1</option>
+                                                            <option value="2">Categoría 2</option>
+                                                            <option value="3">Categoría 3</option>
+                                                            <option value="4">Categoría 4</option>
+                                                        </select>
+                                                    </div>
+
                                                 </div>
-                                                <div class="col-lg-3 col-md-4 col-sm-6">
-                                                    <div class="mt-30 lbel25">
-                                                        <label>Precio*</label>
-                                                        
+                                            </div>
+                                            <div class="price_course">
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <div class="price_title">
+                                                            <h4><i class="uil uil-dollar-sign-alt"></i>Precio</h4>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6 col-md-6">
+                                                        <div class="mt-30 lbel25">
+                                                            <label>¿El curso será de pago?*</label>
+                                                        </div>
+                                                        <select id="pago_boolean" class="ui hj145 dropdown cntry152 prompt srch_explore">
+                                                            <option value="">Seleccione...</option>
+                                                            <option value="1">Sí</option>
+                                                            <option value="0">No</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-lg-3 col-md-4 col-sm-6">
+                                                        <div class="mt-30 lbel25">
+                                                            <label>Precio*</label>
+
                                                             <div class="ui search focus lbel25">
                                                                 <div class="ui left icon input swdh19 swdh55">
-                                                                    <input class="prompt srch_explore" type="number"
-                                                                        min="1" max="49" name="duration" required=""
+                                                                    <input [(ngModel)]="cursoLow.precio" id="curso_precio" class="prompt srch_explore" type="number"
+                                                                        min="0" max="30" name="curso_precio" required=""
                                                                         placeholder="0">
-                                                                    <div style="text-align: center;" class="badge_min">S/.</div>
+                                                                    <div style="text-align: center;" class="badge_min">S/.
+                                                                    </div>
                                                                 </div>
                                                             </div>
-                                                        
+
+                                                        </div>
+
                                                     </div>
-                                                    
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12 col-md-12">
+                                                <div class="save_content">
+                                                    <button class="save_content_btn" (click)='createCourse()' role="button" >Guardar Información General</button>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
 
-                            <div class="step-tab-panel step-tab-gallery" id="tab_step2">
-                                <div class="tab-from-content">
-                                    <div class="title-icon">
-                                        <h3 class="title"><i class="uil uil-image-upload"></i>Vista del curso</h3>
+                                <div class="step-tab-panel step-tab-gallery" id="tab_step2">
+                                    <div class="tab-from-content">
+                                        <div class="title-icon">
+                                            <h3 class="title"><i class="uil uil-image-upload"></i>Vista del curso</h3>
+                                        </div>
+                                        <div class="course__form">
+                                            <div class="view_info10">
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <div class="view_all_dt">
+                                                            <div class="view_img_left">
+                                                                <div class="view__img">
+                                                                    <img src="assets/images/courses/add_img.jpg" alt="">
+                                                                </div>
+                                                            </div>
+                                                            <div class="view_img_right">
+                                                                <h4>Portada</h4>
+                                                                <p>Sube la imagen que se mostrará para tu curso, te
+                                                                    recomendamos
+                                                                    que no contenga texto. Requisitos de imagen: 750x422
+                                                                    pixeles;
+                                                                    .jpg, .jpeg,. gif, or .png.</p>
+                                                                <div class="col-lg-auto col-md-auto">
+                                                                    <div class="ui search focus lbel25">
+                                                                        <div class="ui left icon input swdh19">
+                                                                            <input [(ngModel)]="cursoLow.ruta_img" id="curso_img" class="prompt srch_explore" type="text"
+                                                                                placeholder="Ingresa el link de tu portada..."
+                                                                                name="curso_img"
+                                                                                data-purpose="edit-course-title" value="">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="view_all_dt">
+                                                            <div class="view_img_left">
+                                                                <div class="view__img">
+                                                                    <img src="assets/images/courses/add_video.jpg" alt="">
+                                                                </div>
+                                                            </div>
+                                                            <div class="view_img_right">
+                                                                <h4>Video promocional</h4>
+                                                                <p>Los estudiantes que ven un video promocional
+                                                                    en un curso, tienen 5 veces más probabilidades
+                                                                    de inscribirse en el, ¡Adjunta tu vídeo promocional!
+                                                                </p>
+                                                                <div class="col-lg-auto col-md-auto">
+                                                                    <div class="ui search focus lbel25">
+                                                                        <div class="ui left icon input swdh19">
+                                                                            <input [(ngModel)]="cursoLow.ruta_vid" class="prompt srch_explore" type="text"
+                                                                                placeholder="Ingresa el link de tu video promocional..."
+                                                                                name="curso_vid" id="curso_vid"
+                                                                                data-purpose="edit-course-title" value="">
+
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12 col-md-12">
+                                                        <div class="save_content">
+                                                            <button class="save_content_btn" role="button" (click)='create2Course()' >Guardar Vista</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="course__form">
-                                        <div class="view_info10">
+                                </div>
+
+                                <div class="step-tab-panel step-tab-location" id="tab_step3">
+                                    <div class="tab-from-content">
+                                        <div class="title-icon">
+                                            <h3 class="title"><i class="uil uil-film"></i>Contenido del curso</h3>
+                                        </div>
+                                        <div class="course__form">
                                             <div class="row">
                                                 <div class="col-lg-12">
-                                                    <div class="view_all_dt">
-                                                        <div class="view_img_left">
-                                                            <div class="view__img">
-                                                                <img src="assets/images/courses/add_img.jpg" alt="">
-                                                            </div>
-                                                        </div>
-                                                        <div class="view_img_right">
-                                                            <h4>Portada</h4>
-                                                            <p>Sube la imagen que se mostrará para tu curso, te recomendamos
-                                                                que no contenga texto. Requisitos de imagen: 750x422 pixels;
-                                                                .jpg, .jpeg,. gif, or .png.</p>
-                                                            <div class="upload__input">
-                                                                <div class="input-group">
-                                                                    <div class="custom-file">
-                                                                        <input type="file" class="custom-file-input"
-                                                                            id="inputGroupFile04">
-                                                                        <label class="custom-file-label"
-                                                                            for="inputGroupFile04">Ningún archivo seleccionado</label>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
+                                                    <div class="extra_info">
+                                                        <h4 class="part__title">Añadir Módulo</h4>
                                                     </div>
-                                                    <div class="view_all_dt">
-                                                        <div class="view_img_left">
-                                                            <div class="view__img">
-                                                                <img src="assets/images/courses/add_video.jpg" alt="">
-                                                            </div>
-                                                        </div>
-                                                        <div class="view_img_right">
-                                                            <h4>Video promocional</h4>
-                                                            <p>Los estudiantes que ven un video promocional
-                                                                en un curso, tienen 5 veces más probabilidades
-                                                                de inscribirse en el, ¡Adjunta tu vídeo promocional!
-                                                            </p>
-                                                            <div class="col-lg-auto col-md-auto">
-                                                                <div class="ui search focus lbel25">
+                                                    <div class="view_info10">
+                                                        <div class="row">
+                                                            <div class="col-lg-12 col-md-12">
+                                                                <div class="ui search focus mt-30 lbel25">
+                                                                    <label>Títlo del módulo*</label>
                                                                     <div class="ui left icon input swdh19">
                                                                         <input class="prompt srch_explore" type="text"
-                                                                            placeholder="Ingresa el link de tu video promocional..." name="title"
-                                                                            data-purpose="edit-course-title"
-                                                                             value="">
-                                                                             
+                                                                            placeholder="Escribe el título del módulo..."
+                                                                            name="titulo_modulo"
+                                                                            data-purpose="edit-course-title" maxlength="60"
+                                                                            id="titulo_modulo" value="">
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="step-tab-panel step-tab-location" id="tab_step3">
-                                <div class="tab-from-content">
-                                    <div class="title-icon">
-                                        <h3 class="title"><i class="uil uil-film"></i>Contenido del curso</h3>
-                                    </div>
-                                    <div class="course__form">
-                                        <div class="row">
-                                            <div class="col-lg-12">
-                                                <div class="extra_info">
-                                                    <h4 class="part__title">Añadir módulo</h4>
-                                                </div>
-                                                <div class="view_info10">
-                                                    <div class="row">
-                                                        <div class="col-lg-12 col-md-12">
-                                                            <div class="ui search focus mt-30 lbel25">
-                                                                <label>Títlo del módulo*</label>
-                                                                <div class="ui left icon input swdh19">
-                                                                    <input class="prompt srch_explore" type="text"
-                                                                        placeholder="Escribe el título del módulo..."
-                                                                        name="titulo_modulo" data-purpose="edit-course-title"
-                                                                        maxlength="60" id="titulo_modulo" value="">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-lg-12 col-md-12">
-                                                            <div class="course_des_textarea mt-30 lbel25">
-                                                                <label>Descripción del módulo*</label>
-                                                                <div class="course_des_bg">
-                                                                    <div class="textarea_dt">
-                                                                        <div class="ui form swdh339">
-                                                                            <div class="field">
-                                                                                <textarea rows="5" name="desc_modulo"
-                                                                                    id="desc_modulo"
-                                                                                    placeholder="Escribe la descripción del módulo..."></textarea>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-lg-12 col-md-12">
-                                                            <div class="lecture_title">
-                                                                <h4>Añadir Sesión</h4>
-                                                            </div>
-                                                        </div>
-                                                        
-                                                        <div class="col-lg-12 col-md-6">
-                                                            <div class="ui search focus mt-30 lbel25">
-                                                                <label>Título de la sesión*</label>
-                                                                <div class="ui left icon input swdh19">
-                                                                    <input class="prompt srch_explore" type="text"
-                                                                        placeholder="Escribe el título de la sesión..."
-                                                                        name="title" data-purpose="edit-course-title"
-                                                                        maxlength="60" id="titulo_sesion" value="">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="col-lg-12 col-md-12">
-                                                            <div class="course_des_textarea mt-30 lbel25">
-                                                                <label>Descripción de la sesión*</label>
-                                                                <div class="course_des_bg">
-                                                                    <div class="textarea_dt">
-                                                                        <div class="ui form swdh339">
-                                                                            <div class="field">
-                                                                                <textarea rows="5" name="description"
-                                                                                    id="desc_sesion"
-                                                                                    placeholder="Escribe la descripción de la sesión..."></textarea>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="col-lg-12 col-md-12">
-                                                            <div class="lecture_title">
-                                                                <h4>Sesiones</h4>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="col-lg-12 col-md-12">
-                                                            <div class="table-responsive mt-10 mb-0">
-                                                                <table class="table ucp-table">
-                                                                    <thead class="thead-s">
-                                                                        <tr>
-                                                                            <th class="text-center" scope="col">Sesión
-                                                                            </th>
-                                                                            <th class="cell-ta">Título</th>
-                                                                            <th class="text-center" scope="col">Descripción
-                                                                            </th>
-                                                                            <th class="text-center" scope="col">Acciones
-                                                                            </th>
-                                                                        </tr>
-                                                                    </thead>
-                                                                    <tbody id="body_tabla_sesiones">
-                                                                    </tbody>
-                                                                </table>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="col-lg-12 col-md-12">
-                                                            <div class="lecture_title">
-                                                                <h4>Añadir Sección de Aprendizaje</h4>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="col-lg-6 col-md-6">
-                                                            <div class="mt-30 lbel25">
-                                                                <label>Tipo de Sección*</label>
-                                                            </div>
-                                                            <select class="ui hj145 dropdown cntry152 prompt srch_explore">
-                                                                <option value="">Seleccione el tipo de material...</option>
-                                                                <option value="1">Vídeo</option>
-                                                                <option value="2">PDF</option>
-                                                                <option value="3">Evaluación</option>
-                                                            </select>
-                                                        </div>
-
-
-                                                        <div class="col-lg-6 col-md-6">
-                                                            <div class="ui search focus mt-30 lbel25">
-                                                                <label>Link del vídeo*</label>
-                                                                <div class="ui left icon input swdh19">
-                                                                    <input class="prompt srch_explore" type="text"
-                                                                        placeholder="Ingresa el link de YouTube..."
-                                                                        value="">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="col-lg-6 col-md-6">
-                                                            <div class="ui search focus mt-30 lbel25">
-                                                                <label>Duración*</label>
-                                                                <div class="ui left icon input swdh19 swdh55">
-                                                                    <input class="prompt srch_explore" type="number"
-                                                                        min="0" name="duration" required=""
-                                                                        placeholder="0">
-                                                                    <div class="badge_min">Minutos</div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="col-lg-6 col-md-6">
-                                                            <div class="part_input mt-30 lbel25">
-                                                                <label>PDF*</label>
-                                                                <div class="input-group">
-                                                                    <div class="custom-file">
-                                                                        <input type="file" class="custom-file-input"
-                                                                            id="inputGroupFile06">
-                                                                        <label class="custom-file-label"
-                                                                            for="inputGroupFile06">Ningún archivo seleccionado...</label>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-lg-6 col-md-6">
-                                                            <div class="ui search focus mt-30 lbel25">
-                                                                <label>Número de páginas</label>
-                                                                <div class="ui left icon input swdh19">
-                                                                    <input class="prompt srch_explore" type="number"
-                                                                        name="sort" min="0" max="100" placeholder="0">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="col-lg-6 col-md-12">
-                                                            <button class="part_btn_save prt-sv" type="submit">Guardar Sección de Aprendizaje</button>
-                                                        </div>
-
-                                                        <div class="col-lg-12 col-md-12">
-                                                            <div class="lecture_title">
-                                                                <h4>Secciones de Aprendizaje </h4>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="col-lg-12 col-md-12">
-                                                            <div class="table-responsive mt-10 mb-0">
-                                                                <table class="table ucp-table">
-                                                                    <thead class="thead-s">
-                                                                        <tr>
-                                                                            <th class="text-center" scope="col">Sesión
-                                                                            </th>
-                                                                            <th class="cell-ta">Título</th>
-                                                                            <th class="text-center" scope="col">Duración
-                                                                            </th>
-                                                                            <th class="text-center" scope="col">Acciones
-                                                                            </th>
-                                                                        </tr>
-                                                                    </thead>
-                                                                    <tbody>
-                                                                        <tr>
-                                                                            <td class="text-center">1</td>
-                                                                            <td class="cell-ta">Título de la sesión
-                                                                            </td>
-                                                                            <td class="text-center">1 hr.</td>
-                                                                            <td class="text-center">
-                                                                                <a href="#" title="Edit"
-                                                                                    class="gray-s"><i
-                                                                                        class="uil uil-edit-alt"></i></a>
-                                                                                <a href="#" title="Delete"
-                                                                                    class="gray-s"><i
-                                                                                        class="uil uil-trash-alt"></i></a>
-                                                                            </td>
-                                                                        </tr>
-                                                                    </tbody>
-                                                                </table>
-                                                            </div>
-                                                        </div>
-                                                        
-                                                        <div class="col-lg-12 col-md-12">
-                                                            <div class="save_content">
-                                                                <button class="save_content_btn" onclick="agregarModulos();agregarSesiones()">Guardar módulo</button>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-12 col-md-12">
-                                        <div class="lecture_title">
-                                            <h4>Módulos</h4>
-                                        </div>
-                                    </div>
-
-                                    <div class="table-responsive mt-30">
-                                        <table class="table ucp-table" id="tabla_modulos">
-                                            <thead class="thead-s">
-                                                <tr>
-                                                    <th class="text-center" scope="col">Módulo</th>
-                                                    <th class="cell-ta">Título</th>
-                                                    <th class="cell-ta" scope="col">Descripción</th>
-                                                    <th class="text-center" scope="col">Acciones</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody id="body_tabla_modulos">
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="step-tab-panel step-tab-amenities" id="tab_step4">
-                                <div class="tab-from-content">
-                                    <div class="title-icon">
-                                        <h3 class="title"><i class="uil uil-file-copy-alt"></i>Información Extra</h3>
-                                    </div>
-                                    <div class="course__form">
-                                        <div class="row">
-                                            <div class="col-lg-12">
-                                                <div class="extra_info">
-                                                    <h4 class="part__title">URL personalizada del curso</h4>
-                                                </div>
-                                                <div class="view_info10">
-                                                    <div class="basic_profile1">
-                                                        <div class="basic_ptitle">
-                                                            <h4>Personaliza el link de acceso a tu de tu curso</h4>
-                                                        </div>
-                                                        <div class="basic_form">
-                                                            <div class="row">
-                                                                <div class="col-lg-8">
-                                                                    <div class="row">
-                                                                        <div class="col-lg-12">
-                                                                            <div class="ui search focus mt-30">
-                                                                                <div class="ui left icon labeled input swdh11 swdh31">
-                                                                                    <div class="ui label lb12">
-                                                                                        http://localhost:4200/cursos/
-                                                                                    </div>
-                                                                                    <input class="prompt srch_explore" type="text" name="facebooklink" id="id_facebook" required="" maxlength="64"  placeholder="mi-nuevo-curso">																
+                                                            <div class="col-lg-12 col-md-12">
+                                                                <div class="course_des_textarea mt-30 lbel25">
+                                                                    <label>Descripción del módulo*</label>
+                                                                    <div class="course_des_bg">
+                                                                        <div class="textarea_dt">
+                                                                            <div class="ui form swdh339">
+                                                                                <div class="field">
+                                                                                    <textarea rows="5" name="desc_modulo"
+                                                                                        id="desc_modulo"
+                                                                                        placeholder="Escribe la descripción del módulo..."></textarea>
                                                                                 </div>
-                                                                                <div class="help-block">Ejemplo: http://localhost:4200/cursos/mi-nuevo-curso</div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            
+
+                                                            <div class="col-lg-12 col-md-12">
+                                                                <div class="save_content">
+                                                                    <button class="save_content_btn"
+                                                                        onclick="agregarModulos()">Guardar
+                                                                        Módulo</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+                                        
+
+                                        <div class="col-lg-12 col-md-12">
+                                            <div class="lecture_title">
+                                                <h4>Módulos</h4>
+                                            </div>
+                                        </div>
+
+                                        <div class="table-responsive mt-30">
+                                            <table class="table ucp-table" id="tabla_modulos">
+                                                <thead class="thead-s">
+                                                    <tr>
+                                                        <th class="text-center" scope="col">Módulo</th>
+                                                        <th class="cell-ta">Título</th>
+                                                        <th class="cell-ta" scope="col">Descripción</th>
+                                                        <th class="text-center" scope="col">Acciones</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="body_tabla_modulos">
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+                                        <div class="course__form">
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <div class="extra_info">
+                                                        <h4 class="part__title">Añadir Sesión</h4>
+                                                    </div>
+                                                    <div class="view_info10">
+                                                        <div class="row">
+                                                            <div class="col-lg-12 col-md-12">
+                                                                <div class="ui search focus mt-30 lbel25">
+                                                                    <label>Títlo de la sesión*</label>
+                                                                    <div class="ui left icon input swdh19">
+                                                                        <input class="prompt srch_explore" type="text"
+                                                                            placeholder="Escribe el título de la sesión..."
+                                                                            name="titulo_sesion"
+                                                                            data-purpose="edit-course-title" maxlength="60"
+                                                                            id="titulo_sesion" value="">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-6 col-md-12">
+                                                                <div class="course_des_textarea mt-30 lbel25">
+                                                                    <label>Descripción de la sesión*</label>
+                                                                    <div class="course_des_bg">
+                                                                        <div class="textarea_dt">
+                                                                            <div class="ui form swdh339">
+                                                                                <div class="field">
+                                                                                    <textarea rows="5" name="desc_sesion"
+                                                                                        id="desc_sesion"
+                                                                                        placeholder="Escribe la descripción de la sesión..."></textarea>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-6 col-md-6">
+                                                                <div class="mt-30 lbel25">
+                                                                    <label>Módulo*</label>
+                                                                </div>
+                                                                <select class="ui hj145 dropdown cntry152 prompt srch_explore">
+                                                                    <option value="">Seleccione el módulo de esta sesión...</option>
+                                                                    <option value="1">Módulo 1</option>
+                                                                    <option value="2">Módulo 2</option>
+                                                                    <option value="3">Módulo 3</option>
+                                                                    <option value="4">Módulo 4</option>
+                                                                </select>
+                                                            </div>
+                                                            
+
+                                                            <div class="col-lg-12 col-md-12">
+                                                                <div class="save_content">
+                                                                    <button class="save_content_btn"
+                                                                        onclick="agregarSesiones()">Guardar Sesión</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-12 col-md-12">
+                                            <div class="lecture_title">
+                                                <h4>Sesiones del Módulo N°</h4>
+                                            </div>
+                                        </div>
+
+                                        <div class="table-responsive mt-30">
+                                            <table class="table ucp-table" id="tabla_sesiones">
+                                                <thead class="thead-s">
+                                                    <tr>
+                                                        <th class="text-center" scope="col">Sesión</th>
+                                                        <th class="cell-ta">Título</th>
+                                                        <th class="cell-ta" scope="col">Descripción</th>
+                                                        <th class="text-center" scope="col">Acciones</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="body_tabla_sesiones">
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+                                        <div class="course__form">
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <div class="extra_info">
+                                                        <h4 class="part__title">Añadir Recurso de Aprendizaje</h4>
+                                                    </div>
+                                                    <div class="view_info10">
+                                                        <div class="row">
+
+                                                            <div class="col-lg-12 col-md-12">
+                                                                <div class="ui search focus mt-30 lbel25">
+                                                                    <label>Títlo del Recurso*</label>
+                                                                    <div class="ui left icon input swdh19">
+                                                                        <input class="prompt srch_explore" type="text"
+                                                                            placeholder="Escribe el título del recurso..."
+                                                                            name="titulo_recurso"
+                                                                            data-purpose="edit-course-title" maxlength="60"
+                                                                            id="titulo_recurso" value="">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            
+                                                            <div class="col-lg-6 col-md-6">
+                                                                <div class="mt-30 lbel25">
+                                                                    <label>Tipo de Recurso*</label>
+                                                                </div>
+                                                                <select class="ui hj145 dropdown cntry152 prompt srch_explore">
+                                                                    <option value="">Seleccione el tipo de Recurso...</option>
+                                                                    <option value="1">Vídeo</option>
+                                                                    <option value="2">PDF</option>
+                                                                    <option value="3">Evaluación</option>
+                                                                </select>
+                                                            </div>
+
+
+                                                            <div class="col-lg-6 col-md-6">
+                                                                <div class="ui search focus mt-30 lbel25">
+                                                                    <label>Link del vídeo*</label>
+                                                                    <div class="ui left icon input swdh19">
+                                                                        <input class="prompt srch_explore" type="text"
+                                                                            placeholder="Ingresa el link de YouTube..."
+                                                                            value="">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-lg-6 col-md-6">
+                                                                <div class="ui search focus mt-30 lbel25">
+                                                                    <label>Duración*</label>
+                                                                    <div class="ui left icon input swdh19 swdh55">
+                                                                        <input class="prompt srch_explore" type="number"
+                                                                            min="0" name="duration" required=""
+                                                                            placeholder="0">
+                                                                        <div class="badge_min">Minutos</div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-lg-6 col-md-6">
+                                                                <div class="part_input mt-30 lbel25">
+                                                                    <label>PDF*</label>
+                                                                    <div class="input-group">
+                                                                        <div class="custom-file">
+                                                                            <input type="file" class="custom-file-input"
+                                                                                id="inputGroupFile06">
+                                                                            <label class="custom-file-label"
+                                                                                for="inputGroupFile06">Ningún archivo seleccionado...</label>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-6 col-md-6">
+                                                                <div class="ui search focus mt-30 lbel25">
+                                                                    <label>Número de páginas</label>
+                                                                    <div class="ui left icon input swdh19">
+                                                                        <input class="prompt srch_explore" type="number"
+                                                                            name="sort" min="0" max="100" placeholder="0">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-lg-12 col-md-12">
+                                                                <div class="save_content">
+                                                                    <button class="save_content_btn" onclick="agregarModulos();agregarSesiones()">Guardar Recurso</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-12 col-md-12">
+                                            <div class="lecture_title">
+                                                <h4>Recursos de la Sesión N° </h4>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-12 col-md-12">
+                                            <div class="table-responsive mt-10 mb-0">
+                                                <table class="table ucp-table">
+                                                    <thead class="thead-s">
+                                                        <tr>
+                                                            <th class="text-center" scope="col">Recurso
+                                                            </th>
+                                                            <th class="cell-ta">Título</th>
+                                                            <th class="text-center" scope="col">Tipo
+                                                            </th>
+                                                            <th class="text-center" scope="col">Acciones
+                                                            </th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td class="text-center">1</td>
+                                                            <td class="cell-ta">Título...
+                                                            </td>
+                                                            <td class="text-center">Vídeo</td>
+                                                            <td class="text-center">
+                                                                <a href="#" title="Edit"
+                                                                    class="gray-s"><i
+                                                                        class="uil uil-edit-alt"></i></a>
+                                                                <a href="#" title="Delete"
+                                                                    class="gray-s"><i
+                                                                        class="uil uil-trash-alt"></i></a>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="step-tab-panel step-tab-amenities" id="tab_step4">
+                                    <div class="tab-from-content">
+                                        <div class="title-icon">
+                                            <h3 class="title"><i class="uil uil-file-copy-alt"></i>Información Extra</h3>
+                                        </div>
+                                        <div class="course__form">
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <div class="extra_info">
+                                                        <h4 class="part__title">URL personalizada del curso</h4>
+                                                    </div>
+                                                    <div class="view_info10">
+                                                        <div class="basic_profile1">
+                                                            <div class="basic_ptitle">
+                                                                <h4>Personaliza el link de acceso a tu de tu curso</h4>
+                                                            </div>
+                                                            <div class="basic_form">
+                                                                <div class="row">
+                                                                    <div class="col-lg-8">
+                                                                        <div class="row">
+                                                                            <div class="col-lg-12">
+                                                                                <div class="ui search focus mt-30">
+                                                                                    <div
+                                                                                        class="ui left icon labeled input swdh11 swdh31">
+                                                                                        <div class="ui label lb12">
+                                                                                            http://localhost:4200/cursos/
+                                                                                        </div>
+                                                                                        <input class="prompt srch_explore"
+                                                                                            type="text" name="facebooklink"
+                                                                                            id="id_facebook" required=""
+                                                                                            maxlength="64"
+                                                                                            placeholder="mi-nuevo-curso">
+                                                                                    </div>
+                                                                                    <div class="help-block">Ejemplo:
+                                                                                        http://localhost:4200/cursos/mi-nuevo-curso
+                                                                                    </div>
+                                                                                </div>
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -560,7 +634,6 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
 
                         </div>
                         <div class="step-footer step-tab-pager">

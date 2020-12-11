@@ -26,7 +26,7 @@ export class UsuarioService {
 
     // insertando lo datos  en la base de datos
     create(usuarioLow: UsuarioLow): Observable<any> { // devuele el objeto creado
-        return this.http.post(`${this.urlEndPoint}/addEst`, usuarioLow, { headers: this.httpHeaders }); // pasamos la url, objeto, el formato de manejo de json
+        return this.http.post(`${this.urlEndPoint}/add`, usuarioLow, { headers: this.httpHeaders }); // pasamos la url, objeto, el formato de manejo de json
     }
 
     // obteniendo datos por ID

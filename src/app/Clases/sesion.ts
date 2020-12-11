@@ -1,10 +1,9 @@
-import { Modulo } from "./modulo";
-
 export class Sesion {
 
-    id_sesion: number;
-    nombre: string;
-    estado: string;
-    modulo: Modulo;
+    ID_SESION: number;
+    TITULO: string;
+    DESCRIPCION: String;
+    ESTADO: string;
+    ID_MODULO_FK: number;
 
 }

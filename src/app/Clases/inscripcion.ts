@@ -1,11 +1,10 @@
-import { Curso } from "./curso";
-import { Usuario } from "./usuario";
+export class Inscripcion {
 
-export class inscripcion {
-
-    id_inscripcion: number;
-    estado: string;
-    curso: Curso;
-    usuario: Usuario;
+    ID_INSCRIPCION: number;
+    NOTA: number;
+    PROGRESO: number;
+    ESTADO: String;
+    ID_CURSO_FK: number;
+    ID_USUARIO_FK: number;
 
 }

@@ -6,3 +6,4 @@ export { DashboardInstructorComponent } from './dashboard-instructor/dashboard-i
 export { FooterInstructorComponent } from './footer-instructor/footer-instructor.component';
 export { HeaderInstructorComponent } from './header-instructor/header-instructor.component';
 export { LeftSidebarInstructorComponent } from './left-sidebar-instructor/left-sidebar-instructor.component';
+export { PerfilDocenteIComponent } from './perfil-docente-i/perfil-docente-i.component';

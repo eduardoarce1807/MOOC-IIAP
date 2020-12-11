@@ -1,16 +1,17 @@
 export class Curso{
-    ID_USUARIO: number;
+    ID_CURSO: number;
     TITULO: String;
     SUBTITULO: String;
     PRECIO: number;
-    RUTA_PORTADA: String;
+    RUTA_IMG: String;
+    RUTA_VID: String;
     URL: String;
-    N_MODULOS: number;
-    ESTADO: String;
     OBJETIVO: String;
     PERFIL_PARTICIPANTE: String;
     METODOLOGIA: String;
     COMPETENCIAS: String;
+    FECHA_CREACION: String;
+    ESTADO: String;
     ID_CATEGORIA_FK: number;
     ID_USUARIO_FK: number;
 }

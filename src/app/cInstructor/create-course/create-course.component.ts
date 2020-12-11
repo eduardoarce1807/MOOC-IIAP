@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { CargarScriptsService } from 'src/app/services/cargar-scripts.service';
+import { CursoService } from 'src/app/services/curso.service';
+import { Router, ActivatedRoute } from '@angular/router';
+
+import { CursoLow } from '../../Clases/LowCase/cursoLow';
 
 declare var jQuery: any;
 declare var $: any;
@@ -11,16 +15,32 @@ declare var $: any;
 })
 export class CreateCourseComponent implements OnInit {
 
-  constructor(CS:CargarScriptsService) {
+  public cursoLow: CursoLow = new CursoLow();
+
+  constructor(CS:CargarScriptsService, public cursoService: CursoService, private router: Router,
+    private activatedRoute: ActivatedRoute) {
     CS.CSSUser1(["assets/css/jquery-steps.css"]);
     CS.JSTabla(["assets/js/tablas-curso.js"]);
+  }
+
+  public createCourse(): void {
+
+    this.cursoLow.id_categoria_fk = Number($("#curso_categoria").val());
+
+    console.log(this.cursoLow);
+
+  }
+
+  public create2Course(): void {
+
+    console.log(this.cursoLow);
+
   }
 
 
   ngOnInit(): void {
 
     
-
     $("#hdr-inst").show();
     $("#lsb-inst").show();
     $("#ftr-inst").show();
@@ -40,7 +60,6 @@ export class CreateCourseComponent implements OnInit {
 			alert('Wizard Completed');
 		  }
     });
-
     //-----------------------------------//
 
     

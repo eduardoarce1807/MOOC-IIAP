@@ -16,7 +16,8 @@ import {
     CoursesInstructorComponent,
     CreateCourseComponent,
     CursoComponent,
-    DashboardInstructorComponent
+    DashboardInstructorComponent,
+    PerfilDocenteIComponent
 } from './cInstructor/instructor.paginas'
 
 import {
@@ -39,12 +40,13 @@ const app_routes: Routes = [
     { path: 'ayuda', component: HelpComponent },
     { path: 'feedback', component: FeedbackComponent },
     { path: 'perfil-estudiante', component: InstructorProfilePublicComponent },
-    { path: 'perfil-docente', component: InstructorProfileComponent },
+    { path: 'perfil-instructor', component: InstructorProfileComponent },
     { path: 'configuracion', component: SettingsComponent },
     { path: 'cursos/curso-1', component: CourseDetailComponent },
     { path: 'cursos', component: ExplorarComponent },
 
     { path: 'home-instructor', component: DashboardInstructorComponent },
+    { path: 'perfil-instructor-i', component: PerfilDocenteIComponent },
     { path: 'cursos-instructor', component: CoursesInstructorComponent },
     { path: 'crear-curso', component: CreateCourseComponent },
 

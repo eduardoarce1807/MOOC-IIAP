@@ -31,7 +31,6 @@ import { AboutUsComponent } from './cIIAP/about-us/about-us.component';
 import { HeaderIiapComponent } from './cIIAP/header-iiap/header-iiap.component';
 import { FooterIiapComponent } from './cIIAP/footer-iiap/footer-iiap.component';
 import { ShoppingCartComponent } from './cIIAP/shopping-cart/shopping-cart.component';
-import { ClientesComponent } from './components/clientes/clientes.component';
 
 /////////////////////
 
@@ -49,6 +48,7 @@ import { LoginComponent } from './Login/login/login.component';
 import { RegisterComponent } from './Login/register/register.component';
 import { AuxComponent } from './Login/aux/aux.component';
 import { AuxrComponent } from './Login/auxr/auxr.component';
+import { PerfilDocenteIComponent } from './cInstructor/perfil-docente-i/perfil-docente-i.component';
 
 
 @NgModule({
@@ -71,7 +71,6 @@ import { AuxrComponent } from './Login/auxr/auxr.component';
     HeaderIiapComponent,
     FooterIiapComponent,
     ShoppingCartComponent,
-    ClientesComponent,
     CourseDetailComponent,
     CoursesInstructorComponent,
     AnalyticsInstructorComponent,
@@ -82,7 +81,8 @@ import { AuxrComponent } from './Login/auxr/auxr.component';
     LoginComponent,
     RegisterComponent,
     AuxComponent,
-    AuxrComponent
+    AuxrComponent,
+    PerfilDocenteIComponent
   ],
   imports: [
     BrowserModule,

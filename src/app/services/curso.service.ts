@@ -25,7 +25,7 @@ export class CursoService {
 
   // insertando lo datos  en la base de datos
   create(cursoLow: CursoLow): Observable<any> { // devuele el objeto creado
-      return this.http.post(`${this.urlEndPoint}/addEst`, cursoLow, { headers: this.httpHeaders }); // pasamos la url, objeto, el formato de manejo de json
+      return this.http.post(`${this.urlEndPoint}/add`, cursoLow, { headers: this.httpHeaders }); // pasamos la url, objeto, el formato de manejo de json
   }
 
   // obteniendo datos por ID
@@ -34,8 +34,8 @@ export class CursoService {
   }
 
   // metodo actualizar 
-  update(usuarioLow: CursoLow): Observable<CursoLow> {
-      return this.http.put<CursoLow>(`${this.urlEndPoint}/update/${usuarioLow.id_usuario}`, usuarioLow, { headers: this.httpHeaders })
+  update(cursoLow: CursoLow): Observable<CursoLow> {
+      return this.http.put<CursoLow>(`${this.urlEndPoint}/update/${cursoLow.id_usuario}`, cursoLow, { headers: this.httpHeaders })
   }
 
   // agregando el eliminar 

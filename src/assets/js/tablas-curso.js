@@ -1,5 +1,18 @@
 var modulos = [];
 
+const pagob = document.querySelector('#pago_boolean');
+
+pagob.addEventListener('change', (event) => {
+    if(event.target.value == "0"){
+        $("#curso_precio").val("0");
+        var x = document.getElementById("curso_precio").readOnly = true;
+        
+    }
+    if(event.target.value == "1"){
+        var x = document.getElementById("curso_precio").readOnly = false;
+    }
+});
+
 function limpiarModulos() {
     var body_tabla = document.getElementById("body_tabla_modulos");
     var pp = body_tabla.children.length;

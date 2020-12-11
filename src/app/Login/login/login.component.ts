@@ -91,8 +91,16 @@ export class LoginComponent implements OnInit {
                 uActivo.push(usuA);
                 localStorage.setItem("uActivo", JSON.stringify(uActivo));
     
-                window.location.href="/home";
-                
+                if(tipo == "Estudiante"){
+                  window.location.href="/home";
+                }
+                if(tipo == "Instructor"){
+                  window.location.href="/home-instructor";
+                }
+                if(tipo == "Administrador"){
+                  window.location.href="/home-admin";
+                }
+
               }, 2000);
 
           }

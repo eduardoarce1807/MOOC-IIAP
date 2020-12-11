@@ -14,13 +14,19 @@ export class DashboardInstructorComponent implements OnInit {
 
   ngOnInit(): void {
 
+    $("#hdr-inst").show();
+    $("#lsb-inst").show();
+    $("#ftr-inst").show();
+
+    $("#login").remove();
+    $("#register").remove();
+
     $("#hdr-est").remove();
     $("#lsb-est").remove();
     $("#ftr-est").remove();
 
-    $("#hdr-inst").show();
-    $("#lsb-inst").show();
-    $("#ftr-inst").show();
+    $("#hdr-iiap").remove();
+    $("#ftr-iiap").remove();
 
     // === Dropdown === //
 
