@@ -28,7 +28,7 @@ import {
 } from './cIIAP/iiap.paginas';
 
 import {
-    AuxComponent,
+    AuxlComponent,
     LoginComponent,
     RegisterComponent,
     AuxrComponent
@@ -56,7 +56,7 @@ const app_routes: Routes = [
     { path: 'acerca-de', component: AboutUsComponent },
     { path: 'carrito', component: ShoppingCartComponent },
 
-    { path: 'login', component: AuxComponent },
+    { path: 'login', component: AuxlComponent },
     { path: 'register', component: AuxrComponent },
 
     { path: '**', pathMatch: 'full', redirectTo: 'home' }

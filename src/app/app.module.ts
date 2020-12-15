@@ -45,9 +45,9 @@ import { ExplorarComponent } from './components/explorar/explorar.component';
 import { FeedbackComponent } from './components/feedback/feedback.component';
 import { LoginComponent } from './Login/login/login.component';
 import { RegisterComponent } from './Login/register/register.component';
-import { AuxComponent } from './Login/aux/aux.component';
 import { AuxrComponent } from './Login/auxr/auxr.component';
 import { PerfilDocenteIComponent } from './cInstructor/perfil-docente-i/perfil-docente-i.component';
+import { AuxlComponent } from './Login/auxl/auxl.component';
 
 
 @NgModule({
@@ -78,9 +78,9 @@ import { PerfilDocenteIComponent } from './cInstructor/perfil-docente-i/perfil-d
     FeedbackComponent,
     LoginComponent,
     RegisterComponent,
-    AuxComponent,
     AuxrComponent,
-    PerfilDocenteIComponent
+    PerfilDocenteIComponent,
+    AuxlComponent
   ],
   imports: [
     BrowserModule,
