@@ -15,8 +15,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
 import { LeftSidebarComponent } from './components/left-sidebar/left-sidebar.component';
-import { CarouselModule } from 'ngx-owl-carousel-o';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SettingsComponent } from './components/settings/settings.component';
 import { HelpComponent } from './components/help/help.component';
@@ -85,8 +84,6 @@ import { AuxlComponent } from './Login/auxl/auxl.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    CarouselModule,
-    NgbModule,
     FormsModule,
     BrowserAnimationsModule,
     BrowserModule,
