@@ -40,8 +40,11 @@ const app_routes: Routes = [
     { path: 'ayuda', component: HelpComponent },
     { path: 'feedback', component: FeedbackComponent },
     { path: 'perfil-estudiante', component: InstructorProfilePublicComponent },
+    { path: 'usuarios/:usu', component: InstructorProfilePublicComponent },
     { path: 'perfil-instructor', component: InstructorProfileComponent },
     { path: 'configuracion', component: SettingsComponent },
+    { path: 'configuracion/:usu', component: SettingsComponent },
+    { path: 'cursos/:url', component: CourseDetailComponent },
     { path: 'cursos/curso-1', component: CourseDetailComponent },
     { path: 'cursos', component: ExplorarComponent },
 

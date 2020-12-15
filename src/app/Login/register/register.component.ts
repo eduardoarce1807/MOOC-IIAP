@@ -5,6 +5,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 
 import { UsuarioLow } from 'src/app/Clases/LowCase/usuarioLow';
 import { Usuario } from 'src/app/Clases/usuario';
+import { RolUsuService } from 'src/app/services/rol-usu.service';
+import { Rol_UsuLow } from 'src/app/Clases/LowCase/rol_usuLow';
 
 declare var jQuery: any;
 declare var $: any;
@@ -20,6 +22,7 @@ export class RegisterComponent implements OnInit {
   private titulo: String = "Registro de Usuario";
 
   constructor(public usuarioService: UsuarioService,
+    private Rol_UsuService: RolUsuService,
     private router: Router,
     private activatedRoute: ActivatedRoute) { }
 
@@ -32,18 +35,19 @@ export class RegisterComponent implements OnInit {
     this.usuarioLow.sexo = sexo;
 
     var us = this.usuarioLow;
-    var xd: any;
-    var a = this.usuarioService;
+    var usuariosBD: any;
+    var uService = this.usuarioService;
+    var r_uService = this.Rol_UsuService;
 
     this.usuarioService.getAll().subscribe(
-      usuarios => { xd = usuarios }
+      usuarios => { usuariosBD = usuarios }
     );
 
     setTimeout(
       function () {
 
         var checker = true;
-        
+
         if ($("#nombres_f").val() == "" ||
           $("#ap_paterno_f").val() == "" ||
           $("#ap_materno_f").val() == "" ||
@@ -56,20 +60,21 @@ export class RegisterComponent implements OnInit {
         ) {
           $("#alerta").show();
           $("#alerta").text("Por favor, complete todos los campos.");
+          checker = false;
         } else {
-          for (var i = 0; i < xd.length; i++) {
+          for (var i = 0; i < usuariosBD.length; i++) {
 
-            if (us.dni == xd[i].DNI) {
+            if (us.dni == usuariosBD[i].DNI) {
               $("#alerta").show();
               $("#alerta").text("Este DNI ya está registrado.");
               checker = false;
             }
-            if (us.usuario == xd[i].USUARIO) {
+            if (us.usuario == usuariosBD[i].USUARIO) {
               $("#alerta").show();
               $("#alerta").text("Este usuario ya está registrado.");
               checker = false;
             }
-            if (us.correo == xd[i].CORREO) {
+            if (us.correo == usuariosBD[i].CORREO) {
               $("#alerta").show();
               $("#alerta").text("Este correo ya está registrado.");
               checker = false;
@@ -78,13 +83,19 @@ export class RegisterComponent implements OnInit {
 
         }
 
-        if(checker){
+        if (checker) {
           $("#alerta").hide();
           $("#alerta2").show();
           $("#alerta2").text("Usuario correctamente registrado.");
-          a.create(us).subscribe(
+
+          //Crear estudiante
+          // uService.create(us).subscribe();
+          uService.createR(us, 0).subscribe(
             (Response) => window.location.href = '/login'
           );
+
+          
+
         }
 
       }, 2000);

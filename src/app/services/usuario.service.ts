@@ -29,9 +29,24 @@ export class UsuarioService {
         return this.http.post(`${this.urlEndPoint}/add`, usuarioLow, { headers: this.httpHeaders }); // pasamos la url, objeto, el formato de manejo de json
     }
 
+    // insertando lo datos  en la base de datos
+    createR(usuarioLow: UsuarioLow, id_rol: number): Observable<any> { // devuele el objeto creado
+        return this.http.post(`${this.urlEndPoint}/addR?id=${id_rol}`, usuarioLow, { headers: this.httpHeaders }); // pasamos la url, objeto, el formato de manejo de json
+    }
+
     // obteniendo datos por ID
     get(id: number): Observable<any> {
         return this.http.get(`${this.urlEndPoint}/${id}`)
+    }
+
+    // obteniendo datos por DNI
+    getByDni(Dni: string): Observable<any> {
+        return this.http.get(`${this.urlEndPoint}/dni?dni=${Dni}`)
+    }
+
+    // obteniendo datos por DNI
+    getByUsu(usu: string): Observable<any> {
+        return this.http.get(`${this.urlEndPoint}/usu?usu=${usu}`)
     }
 
     // metodo actualizar 

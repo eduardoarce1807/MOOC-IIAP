@@ -1,4 +1,21 @@
 import { Component, OnInit } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
+
+import { Router, ActivatedRoute } from '@angular/router';
+import { Curso } from 'src/app/Clases/curso';
+import { Usuario } from 'src/app/Clases/usuario';
+import { Modulo } from 'src/app/Clases/modulo';
+import { Sesion } from 'src/app/Clases/sesion';
+import { Rec_Ap } from 'src/app/Clases/rec_ap';
+import { CursoService } from 'src/app/services/curso.service';
+import { UsuarioService } from 'src/app/services/usuario.service';
+import { ModuloService } from 'src/app/services/modulo.service';
+import { SesionService } from 'src/app/services/sesion.service';
+import { RecApService } from 'src/app/services/rec-ap.service';
+import { InscripcionService } from 'src/app/services/inscripcion.service';
+import { InscripcionLow } from 'src/app/Clases/LowCase/inscripcionLow';
+import { Inscripcion } from 'src/app/Clases/inscripcion';
+
 
 declare var jQuery: any;
 declare var $: any;
@@ -10,13 +27,67 @@ declare var $: any;
 })
 export class CourseDetailComponent implements OnInit {
 
-  constructor() { }
+  usuarios: Usuario[];
+  curso: Curso = new Curso();
+  inscripcion: InscripcionLow = new InscripcionLow();
+  modulos: Modulo[];
+  sesiones: Sesion[];
+  recs_ap: Rec_Ap[];
+
+  videoUrl: any;
+  dangerousVideoUrl: any;
+  usuA: any;
+
+  constructor(
+    private sanitizer: DomSanitizer,
+    private router: Router,
+    private activatedRoute: ActivatedRoute,
+    private cursoService: CursoService,
+    private usuarioService: UsuarioService,
+    private moduloService: ModuloService,
+    private sesionService: SesionService,
+    private rec_apService: RecApService,
+    private inscripcionService: InscripcionService
+  ) { }
+
+  updateVideoUrl(id: string) {
+    // Appending an ID to a YouTube URL is safe.
+    // Always make sure to construct SafeValue objects as
+    // close as possible to the input data so
+    // that it's easier to check if the value is safe.
+    this.dangerousVideoUrl = 'https://www.youtube.com/embed/' + id;
+    this.videoUrl =
+      this.sanitizer.bypassSecurityTrustResourceUrl(this.dangerousVideoUrl.toString());
+  }
 
   ngOnInit(): void {
 
-    $("#hdr-est").show();
-    $("#lsb-est").show();
-    $("#ftr-est").show();
+    this.cargar();
+    this.cargarCurso();
+  }
+
+  inscribirse(): void {
+
+    var uActivo: any = localStorage.getItem("uActivo"); //Obtener datos de localStorage
+    uActivo = JSON.parse(uActivo); // Covertir a objeto
+    if (uActivo === null) {// Si no existe, creamos un array vacio.
+      uActivo = []; // es es un  array
+    }else{
+      this.usuA = JSON.parse(uActivo[0]);
+    }
+
+    this.inscripcion.id_curso_fk = this.curso.ID_CURSO;
+    this.inscripcion.id_usuario_fk = this.usuA.id_usuario;
+
+    console.log(this.inscripcion);
+
+    //this.inscripcionService.create(this.inscripcion).subscribe();
+  }
+
+  cargar(): void {
+
+    $("#login").remove();
+    $("#register").remove();
 
     $("#hdr-inst").remove();
     $("#lsb-inst").remove();
@@ -25,7 +96,12 @@ export class CourseDetailComponent implements OnInit {
     $("#hdr-iiap").remove();
     $("#ftr-iiap").remove();
 
+    $("#hdr-est").show();
+    $("#lsb-est").show();
+    $("#ftr-est").show();
+
     $('#wrpr').addClass('wrapper _bg4586');
+
     // === Dropdown === //
 
     $('.ui.dropdown')
@@ -303,6 +379,131 @@ export class CourseDetailComponent implements OnInit {
       }, false);
 
     })(window, document);
+  }
+
+  timer = ms => new Promise(res => setTimeout(res, ms));
+
+  modsx: string = "";
+
+  async load3(num: Rec_Ap[]) {
+    for(var i = 1; i<num.length; i++){
+      console.log(num);
+      this.modsx = this.modsx + '<div class="lecture-container">'+
+                                  '<div class="left-content">'+
+                                    '<i class="uil uil-play-circle icon_142"></i>'+
+                                    '<div class="top">'+
+                                      '<div class="title">'+num[i-1].TITULO+'</div>'+
+                                    '</div>'+
+                                  '</div>'+
+                                  '<div class="details">'+
+                                    '<a href="#" class="preview-text">Preview</a>'+
+                                    '<span class="content-summary">01.40</span>'+
+                                  '</div>'+
+                                '</div>';
+      await this.timer(500); // then the created Promise can be awaited
+    }
+
+  }
+
+  async load2(num: Sesion[]) {
+    for(var i = 1; i<= num.length; i++){
+      
+      this.rec_apService.getBySesionId(i).subscribe(
+        Recs_ApPorSesion => {
+          console.log(i);
+          this.modsx = this.modsx + '<div id="accordion" class="ui-accordion ui-widget ui-helper-reset">'+
+                                      '<a href="javascript:void(0)" class="accordion-header ui-accordion-header ui-helper-reset ui-state-default ui-accordion-icons ui-corner-all">'+
+                                        '<div class="section-header-left">'+
+                                          '<span class="section-title-wrapper">'+
+                                            '<i class="uil uil-presentation-play crse_icon"></i>'+
+                                            '<span class="section-title-text">'+num[i-1].TITULO+'</span>'+
+                                          '</span>'+
+                                        '</div>'+
+                                      '</a>'+
+                                    '</div>'+
+                                    '<div class="ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom">';
+          
+          this.load3(Recs_ApPorSesion['RECS_AP']);
+          
+          this.modsx = this.modsx + '</div>';
+          
+        }
+      );
+
+      await this.timer(3000); // then the created Promise can be awaited
+      
+    }
+    
+  }
+
+  async load () { // We need to wrap the loop into an async function for this to work
+    for (var i = 1; i <= this.modulos.length; i++) {
+      this.sesionService.getByModuloId(i).subscribe(
+        SesionesPorModulo => {
+          console.log(i);
+          this.modsx = this.modsx + '<h3>'+this.modulos[i-1].TITULO+'</h3>';
+          this.load2(SesionesPorModulo['SESIONES']);
+          
+        }
+      );
+      await this.timer(10000); // then the created Promise can be awaited
+    }
+    
+    $("#contM").append(this.modsx);
+  }
+
+  cargarCurso(): void {
+
+    this.activatedRoute.params.subscribe(
+      params => {
+        let url = params['url'];
+
+        if (url) {
+
+          this.usuarioService.getAll().subscribe(
+            Usuarios => {
+              this.usuarios = Usuarios;
+              console.log(this.usuarios);
+              this.cursoService.getByUrl(url).subscribe(
+                Curso => {
+                  this.curso = Curso['CURSOS'][0];
+                  console.log(this.curso);
+                  this.updateVideoUrl(this.curso.RUTA_VID.slice(30));
+                  this.moduloService.getByCursoId(this.curso.ID_CURSO).subscribe(
+                    Modulos => {
+                      this.modulos = Modulos['MODULOS'];
+                      console.log(this.modulos);
+                      this.sesionService.getByCursoId(this.curso.ID_CURSO).subscribe(
+                        Sesiones => {
+                          this.sesiones = Sesiones['SESIONES'];
+                          console.log(this.sesiones);
+                          this.rec_apService.getByCursoId(this.curso.ID_CURSO).subscribe(
+                            Recs_Ap => {
+                              this.recs_ap = Recs_Ap['RECS_AP'];
+                              console.log(this.recs_ap);
+
+                              var modsx: string;
+
+                              this.load();
+
+                            }
+                          );
+                        }
+                      );
+                    }
+                  )
+                }
+              );
+            }
+          );
+
+          
+
+
+        }
+
+      }
+    );
   }
 
 }

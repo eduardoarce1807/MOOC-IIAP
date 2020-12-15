@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
+import { Router, ActivatedRoute } from '@angular/router';
+import { UsuarioService } from 'src/app/services/usuario.service';
+import { Usuario } from 'src/app/Clases/usuario';
+import { UsuarioLow } from 'src/app/Clases/LowCase/usuarioLow';
+
 declare var jQuery: any;
 declare var $: any;
 
@@ -10,13 +15,50 @@ declare var $: any;
 })
 export class SettingsComponent implements OnInit {
 
-  constructor() { }
+  usuario: Usuario = new Usuario();
+  usuarioLow: UsuarioLow = new UsuarioLow();
+  usuA: any;
+
+  constructor(
+    private router: Router,
+    private activatedRoute: ActivatedRoute,
+    private usuarioService: UsuarioService
+  ) { }
+
+  cargarUsuario(): void {
+    this.activatedRoute.params.subscribe(
+      params => {
+        let usu = params['usu'];
+
+        var uActivo: any = localStorage.getItem("uActivo"); //Obtener datos de localStorage
+          uActivo = JSON.parse(uActivo); // Covertir a objeto
+          if (uActivo === null) {// Si no existe, creamos un array vacio.
+            uActivo = []; // es es un  array
+          } else {
+            this.usuA = JSON.parse(uActivo[0]);
+          }
+
+        if (usu && usu == this.usuA.usuario) {
+
+          this.usuarioService.getByUsu(usu).subscribe(
+            Usuario => {
+              this.usuario = Usuario['USUARIOS'][0];
+              console.log(this.usuario);
+            }
+          );
+        }
+      }
+    );
+  }
 
   ngOnInit(): void {
 
-    $("#hdr-est").show();
-    $("#lsb-est").show();
-    $("#ftr-est").show();
+    this.cargarUsuario();
+
+    $('#wrpr').removeClass('wrapper _bg4586').addClass('wrapper');
+
+    $("#login").remove();
+    $("#register").remove();
 
     $("#hdr-inst").remove();
     $("#lsb-inst").remove();
@@ -24,6 +66,10 @@ export class SettingsComponent implements OnInit {
 
     $("#hdr-iiap").remove();
     $("#ftr-iiap").remove();
+
+    $("#hdr-est").show();
+    $("#lsb-est").show();
+    $("#ftr-est").show();
 
     // === Dropdown === //
 

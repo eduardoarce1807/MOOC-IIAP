@@ -1,0 +1,15 @@
+<svg width="480" height="270" xmlns="http://www.w3.org/2000/svg">
+ <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
+ <g>
+  <title>background</title>
+  <rect fill="#fff" id="canvas_background" height="272" width="482" y="-1" x="-1"/>
+  <g display="none" overflow="visible" y="0" x="0" height="100%" width="100%" id="canvasGrid">
+   <rect fill="url(#gridpattern)" stroke-width="0" y="0" x="0" height="100%" width="100%"/>
+  </g>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <rect stroke="#000" id="svg_1" height="263.92411" width="473.82815" y="2.85756" x="3.43728" stroke-width="9.5" fill="#fff"/>
+  <text stroke="#000" transform="matrix(3.106781490473111,0,0,2.818608892644476,-167.19545129394976,-130.6567621004214) " font-weight="bold" font-style="italic" xml:space="preserve" text-anchor="start" font-family="Arvo, sans-serif" font-size="24" id="svg_2" y="102.7616" x="87.02284" fill-opacity="null" stroke-opacity="null" stroke-width="0" fill="#000000">CURSO</text>
+ </g>
+</svg>

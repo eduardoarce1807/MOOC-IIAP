@@ -1,6 +1,7 @@
 export class Rec_Ap {
 
     ID_REC_AP: number;
+    TITULO: string;
     NOTA: number;
     URL: String;
     COMPLETADA: String;

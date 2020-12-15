@@ -8,8 +8,8 @@
         <span class="collapse_menu--label"></span>
     </button>
     <div class="main_logo" id="logo">
-        <a href="index.html"><img src="assets/images/iiap-large.svg" width="132" height="48" alt=""></a>
-        <a href="index.html"><img class="logo-inverse" src="assets/images/iiap-large-dark.svg" width="132" height="48" alt=""></a>
+        <a routerLink="/home"><img src="assets/images/iiap-large.svg" width="132" height="48" alt=""></a>
+        <a routerLink="/home"><img class="logo-inverse" src="assets/images/iiap-large-dark.svg" width="132" height="48" alt=""></a>
     </div>
     <div class="top-category">
         <div class="ui compact menu cate-dpdwn">
@@ -44,12 +44,12 @@
                             <img src="assets/images/hd_dp.jpg" alt="">
                             <div class="pd_content">
                                 <div class="rhte85">
-                                    <!-- <h6 id="nom">{{usuA.nombres+' '+usuA.ap_paterno+' '+usuA.ap_materno}}</h6> -->
+                                    <h6 id="nom">{{usuA.nombres+' '+usuA.ap_paterno+' '+usuA.ap_materno}}</h6>
                                 </div>
-                                <!-- <span id="cor">{{usuA.correo}}</span> -->
+                                <span id="cor">{{usuA.correo}}</span>
                             </div>							
                         </div>
-                        <a routerLink="/perfil-estudiante" class="dp_link_12">Ver perfil</a>						
+                        <a routerLink="{{'usuarios/'+usuA.usuario}}" class="dp_link_12">Ver perfil</a>						
                     </div>
                     <div class="night_mode_switch__btn">
                         <a id="night-mode" class="btn-night-mode">

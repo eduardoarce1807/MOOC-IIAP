@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { RolUsuService } from 'src/app/services/rol-usu.service';
 
+import { Router, ActivatedRoute } from '@angular/router';
+import { UsuarioService } from 'src/app/services/usuario.service';
+import { Usuario } from 'src/app/Clases/usuario';
+
 declare var jQuery: any;
 declare var $: any;
 
@@ -12,10 +16,20 @@ declare var $: any;
 export class InstructorProfilePublicComponent implements OnInit {
 
   usuA: any;
+  usuario: Usuario = new Usuario();
 
-  constructor( public rol_usuService: RolUsuService ) { }
+  constructor(
+    public rol_usuService: RolUsuService,
+    private router: Router,
+    private activatedRoute: ActivatedRoute,
+    private usuarioService: UsuarioService
+  ) { }
 
   ngOnInit(): void {
+
+    this.cargarUsuario();
+
+    $("#config").hide();
 
     $("#hdr-est").show();
     $("#lsb-est").show();
@@ -38,9 +52,10 @@ export class InstructorProfilePublicComponent implements OnInit {
     uActivo = JSON.parse(uActivo); // Covertir a objeto
     if (uActivo === null) {// Si no existe, creamos un array vacio.
       uActivo = []; // es es un  array
+    }else{
+      this.usuA = JSON.parse(uActivo[0]);
     }
 
-    this.usuA = JSON.parse(uActivo[0]);
 
     // === Dropdown === //
 
@@ -321,6 +336,23 @@ export class InstructorProfilePublicComponent implements OnInit {
     })(window, document);
 
 
+  }
+
+  cargarUsuario(): void {
+    this.activatedRoute.params.subscribe(
+      params => {
+        let usu = params['usu'];
+        this.usuarioService.getByUsu(usu).subscribe(
+          Usuario => {
+            this.usuario = Usuario['USUARIOS'][0];
+            console.log(this.usuario);
+            if(this.usuario.ID_USUARIO == this.usuA.id_usuario){
+              $("#config").show();
+            }
+          }
+        );
+      }
+    );
   }
 
 }

@@ -34,6 +34,16 @@ export class SesionService {
         return this.http.get(`${this.urlEndPoint}/${id}`)
     }
 
+    // obteniendo datos por ID del Curso
+    getByCursoId(id: number): Observable<any> {
+        return this.http.get(`${this.urlEndPoint}/id-curso?id=${id}`)
+    }
+
+    // obteniendo datos por ID del Modulo
+    getByModuloId(id: number): Observable<any> {
+        return this.http.get(`${this.urlEndPoint}/id-modulo?id=${id}`)
+    }
+
     // metodo actualizar 
     update(SesionLow: SesionLow): Observable<SesionLow> {
         return this.http.put<SesionLow>(`${this.urlEndPoint}/update/${SesionLow.id_sesion}`, SesionLow, { headers: this.httpHeaders })

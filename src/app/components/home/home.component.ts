@@ -36,6 +36,8 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
 
+    $('#wrpr').removeClass('wrapper _bg4586').addClass('wrapper');
+
     $("#login").remove();
 
     $("#register").remove();
@@ -51,13 +53,15 @@ export class HomeComponent implements OnInit {
     $("#hdr-iiap").remove();
     $("#ftr-iiap").remove();
 
-    //var uActivo: any = localStorage.getItem("uActivo"); //Obtener datos de localStorage
-    //uActivo = JSON.parse(uActivo); // Covertir a objeto
-    //if (uActivo === null) {// Si no existe, creamos un array vacio.
-    //  uActivo = []; // es es un  array
-    //}
+    var uActivo: any = localStorage.getItem("uActivo"); //Obtener datos de localStorage
+    uActivo = JSON.parse(uActivo); // Covertir a objeto
+    if (uActivo === null) {// Si no existe, creamos un array vacio.
+      uActivo = []; // es es un  array
+    }else{
 
-    //this.usuA = JSON.parse(uActivo[0]);
+      this.usuA = JSON.parse(uActivo[0]);
+
+    }
 
     // === Dropdown === //
 

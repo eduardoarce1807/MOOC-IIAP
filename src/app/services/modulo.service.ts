@@ -34,6 +34,11 @@ export class ModuloService {
         return this.http.get(`${this.urlEndPoint}/${id}`)
     }
 
+    // obteniendo datos por ID del Curso
+    getByCursoId(id: number): Observable<any> {
+        return this.http.get(`${this.urlEndPoint}/id-curso?id=${id}`)
+    }
+
     // metodo actualizar 
     update(ModuloLow: ModuloLow): Observable<ModuloLow> {
         return this.http.put<ModuloLow>(`${this.urlEndPoint}/update/${ModuloLow.id_modulo}`, ModuloLow, { headers: this.httpHeaders })

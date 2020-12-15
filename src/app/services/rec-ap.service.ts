@@ -34,6 +34,16 @@ export class RecApService {
         return this.http.get(`${this.urlEndPoint}/${id}`)
     }
 
+    // obteniendo datos por ID del Curso
+    getBySesionId(id: number): Observable<any> {
+        return this.http.get(`${this.urlEndPoint}/id-sesion?id=${id}`)
+    }
+
+    // obteniendo datos por ID del Curso
+    getByCursoId(id: number): Observable<any> {
+        return this.http.get(`${this.urlEndPoint}/id-curso?id=${id}`)
+    }
+
     // metodo actualizar 
     update(Rec_ApLow: Rec_ApLow): Observable<Rec_ApLow> {
         return this.http.put<Rec_ApLow>(`${this.urlEndPoint}/update/${Rec_ApLow.id_rec_ap}`, Rec_ApLow, { headers: this.httpHeaders })

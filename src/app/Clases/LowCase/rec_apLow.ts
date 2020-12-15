@@ -1,6 +1,7 @@
 export class Rec_ApLow {
 
     id_rec_ap: number;
+    titulo: string;
     nota: number;
     url: String;
     completada: String;

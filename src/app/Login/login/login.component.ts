@@ -19,19 +19,22 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
 
+    $("#alertaR").hide();
+    $("#alertaV").hide();
+
     var uActivo: any = localStorage.getItem("uActivo"); //Obtener datos de localStorage
     uActivo = JSON.parse(uActivo); // Covertir a objeto
     if (uActivo === null) {// Si no existe, creamos un array vacio.
       uActivo = []; // es es un  array
     }
 
-    var xd: any;
+    var usus: any;
 
     this.usuarioService.getAll().subscribe(
-      usuarios => { xd = usuarios }
+      usuarios => { usus = usuarios }
     );
 
-    var auxx = this.rol_usuService;
+    var r_uService = this.rol_usuService;
 
     $("#btn_login").bind("click", function () {
 
@@ -39,9 +42,9 @@ export class LoginComponent implements OnInit {
         function () {
           var aux: number;
           var checker = false;
-          for (var i = 0; i < xd.length; i++) {
-            if ($("#usuario_f").val() == xd[i].USUARIO) {
-              if ($("#clave_f").val() == xd[i].CLAVE) {
+          for (var i = 0; i < usus.length; i++) {
+            if ($("#usuario_f").val() == usus[i].USUARIO) {
+              if ($("#clave_f").val() == usus[i].CLAVE) {
                 aux = i;
                 checker = true;
               }
@@ -50,38 +53,42 @@ export class LoginComponent implements OnInit {
 
           if (checker) {
 
-            var xdA: any;
+            var r_u: any;
 
-            auxx.getUsu(xd[aux].ID_USUARIO).subscribe(
-              rol_usu => { xdA = rol_usu }
+            r_uService.getUsu(usus[aux].ID_USUARIO).subscribe(
+              rol_usu => { r_u = rol_usu }
             );
+
+            $("#alertaR").hide();
+            $("#alertaV").show();
+            $("#alertaV").text("Sesión iniciada.");
 
             setTimeout(
               function()
               {
                 var tipo: string;
-                if(xdA["ROLES_USU"][0].ID_ROL_FK == 1){
+                if(r_u["ROLES_USU"][0].ID_ROL_FK == 1){
                   tipo = "Administrador";
                 }
-                if(xdA["ROLES_USU"][0].ID_ROL_FK == 2){
+                if(r_u["ROLES_USU"][0].ID_ROL_FK == 2){
                   tipo = "Estudiante";
                 }
-                if(xdA["ROLES_USU"][0].ID_ROL_FK == 3){
+                if(r_u["ROLES_USU"][0].ID_ROL_FK == 3){
                   tipo = "Instructor";
                 }
                 var usuA = JSON.stringify({
-                  id_usuario: xd[aux].ID_USUARIO,
-                  nombres: xd[aux].NOMBRES,
-                  ap_paterno: xd[aux].AP_PATERNO,
-                  ap_materno: xd[aux].AP_MATERNO,
-                  descripcion: xd[aux].DESCRIPCION,
-                  dni: xd[aux].DNI,
-                  correo: xd[aux].CORREO,
-                  fecha_nacimiento: xd[aux].FECHA_NACIMIENTO,
-                  sexo: xd[aux].SEXO,
-                  usuario: xd[aux].USUARIO,
-                  clave: xd[aux].CLAVE,
-                  estado: xd[aux].ESTADO,
+                  id_usuario: usus[aux].ID_USUARIO,
+                  nombres: usus[aux].NOMBRES,
+                  ap_paterno: usus[aux].AP_PATERNO,
+                  ap_materno: usus[aux].AP_MATERNO,
+                  descripcion: usus[aux].DESCRIPCION,
+                  dni: usus[aux].DNI,
+                  correo: usus[aux].CORREO,
+                  fecha_nacimiento: usus[aux].FECHA_NACIMIENTO,
+                  sexo: usus[aux].SEXO,
+                  usuario: usus[aux].USUARIO,
+                  clave: usus[aux].CLAVE,
+                  estado: usus[aux].ESTADO,
                   tipo: tipo
                 });
     
@@ -92,17 +99,24 @@ export class LoginComponent implements OnInit {
                 localStorage.setItem("uActivo", JSON.stringify(uActivo));
     
                 if(tipo == "Estudiante"){
+                  // alert("El pana es estudiante");
                   window.location.href="/home";
                 }
                 if(tipo == "Instructor"){
+                  // alert("El pana es instructor");
                   window.location.href="/home-instructor";
                 }
                 if(tipo == "Administrador"){
+                  // alert("El pana es admin xd");
                   window.location.href="/home-admin";
                 }
 
               }, 2000);
 
+          }else{
+            $("#alertaV").hide();
+            $("#alertaR").show();
+            $("#alertaR").text("Credenciales incorrectas.");
           }
 
         }, 1000);

@@ -41,7 +41,6 @@ import { CourseDetailComponent } from './components/course-detail/course-detail.
 import { CoursesInstructorComponent } from './cInstructor/courses-instructor/courses-instructor.component';
 import { AnalyticsInstructorComponent } from './cInstructor/analytics-instructor/analytics-instructor.component';
 import { CursoComponent } from './cInstructor/curso/curso.component';
-import { PruebasComponent } from './cInstructor/pruebas/pruebas.component';
 import { ExplorarComponent } from './components/explorar/explorar.component';
 import { FeedbackComponent } from './components/feedback/feedback.component';
 import { LoginComponent } from './Login/login/login.component';
@@ -75,7 +74,6 @@ import { PerfilDocenteIComponent } from './cInstructor/perfil-docente-i/perfil-d
     CoursesInstructorComponent,
     AnalyticsInstructorComponent,
     CursoComponent,
-    PruebasComponent,
     ExplorarComponent,
     FeedbackComponent,
     LoginComponent,
