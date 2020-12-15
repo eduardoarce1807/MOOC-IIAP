@@ -49,6 +49,11 @@ export class UsuarioService {
         return this.http.get(`${this.urlEndPoint}/usu?usu=${usu}`)
     }
 
+    // obteniendo datos por DNI
+    getIByCursoId(id: number): Observable<any> {
+        return this.http.get(`${this.urlEndPoint}/cur?id=${id}`)
+    }
+
     // metodo actualizar 
     update(usuarioLow: UsuarioLow): Observable<UsuarioLow> {
         return this.http.put<UsuarioLow>(`${this.urlEndPoint}/update/${usuarioLow.id_usuario}`, usuarioLow, { headers: this.httpHeaders })

@@ -62,7 +62,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="user_dt5">
-                    <div class="user_dt_left">
+                    <!-- <div class="user_dt_left">
                         <div class="live_user_dt">
                             <div class="user_img5">
                                 <a href="#"><img src="assets/images/left-imgs/img-1.jpg" alt=""></a>
@@ -71,8 +71,8 @@
                                 <a href="#" class="_df7852 m-20">Nombre del profesor</a>
                             </div>
                         </div>
-                    </div>
-                    <div class="user_dt_right">
+                    </div> -->
+                    <!-- <div class="user_dt_right">
                         <ul>
                             <li>
                                 <a href="#" class="lkcm152"><i class="uil uil-eye"></i><span>350</span></a>
@@ -87,7 +87,7 @@
                                 <a href="#" class="lkcm152"><i class="uil uil-share-alt"></i><span>9</span></a>
                             </li>
                         </ul>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="course_tabs">
                     <nav>
@@ -114,21 +114,38 @@
                         <div class="tab-pane fade show active" id="nav-about" role="tabpanel">
                             <div class="_htg451">
                                 <div class="_htg452">
-                                    <h3>Objetivo</h3>
+                                    <h3>Objetivo:</h3>
                                     <p>{{curso.OBJETIVO}}</p>
                                 </div>
                                 <div class="_htg452 mt-35">
-                                    <h3>Metodología</h3>
-                                    <p>{{curso.METODOLOGIA}}</p>
+                                    <h3>Certificación:</h3>
+                                    <p>Certificación: "{{curso.CERTIFICACION_TIT}}."</p>
                                 </div>
                                 <div class="_htg452 mt-35">
-                                    <h3>Perfil del participante:</h3>
-                                    <p>{{curso.PERFIL_PARTICIPANTE}}</p>
+                                    <h3>Certificadora(s):</h3>
+                                    <p>{{curso.CERTIFICADORA}}</p>
+                                    <p>{{curso.CERTIFICADORA_2}}</p>
                                 </div>
-                                <div class="_htgdrt mt-35">
-                                    <h3>Competencias</h3>
+                                <div class="_htg452 mt-35">
+                                    <h3>Duración:</h3>
                                     <div class="_scd123">
-                                        <p>{{curso.COMPETENCIAS}}</p>
+                                        <p>{{curso.DURACION}} Horas Lectivas</p>
+                                    </div>
+                                    <h3>Modalidad:</h3>
+                                    <div class="_scd123">
+                                        <p>100% Virtual</p>
+                                    </div>
+                                </div>
+                                <div class="_htgdrt mt-20">
+                                    <h3>Capacitador(es):</h3>
+                                    <div class="_scd123">
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <ul class="_htg452 _abcd145">												
+                                                    <li *ngFor="let itI of capacitadores"><div class="_5f7g15"><i class="fas fa-check-circle"></i><span>{{itI.NOMBRES + ' ' +itI.AP_PATERNO + ' ' + itI.AP_MATERNO}}</span></div></li>
+                                                </ul>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

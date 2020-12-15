@@ -13,8 +13,10 @@ import { ModuloService } from 'src/app/services/modulo.service';
 import { SesionService } from 'src/app/services/sesion.service';
 import { RecApService } from 'src/app/services/rec-ap.service';
 import { InscripcionService } from 'src/app/services/inscripcion.service';
+import { UsuCurService } from 'src/app/services/usu-cur.service';
 import { InscripcionLow } from 'src/app/Clases/LowCase/inscripcionLow';
 import { Inscripcion } from 'src/app/Clases/inscripcion';
+import { UsuCur } from 'src/app/Clases/usu_cur';
 
 
 declare var jQuery: any;
@@ -27,6 +29,8 @@ declare var $: any;
 })
 export class CourseDetailComponent implements OnInit {
 
+  capacitadores: Usuario[];
+  usu_cur: UsuCur[];
   usuarios: Usuario[];
   curso: Curso = new Curso();
   inscripcion: InscripcionLow = new InscripcionLow();
@@ -47,7 +51,8 @@ export class CourseDetailComponent implements OnInit {
     private moduloService: ModuloService,
     private sesionService: SesionService,
     private rec_apService: RecApService,
-    private inscripcionService: InscripcionService
+    private inscripcionService: InscripcionService,
+    private usu_curService: UsuCurService
   ) { }
 
   updateVideoUrl(id: string) {
@@ -58,6 +63,7 @@ export class CourseDetailComponent implements OnInit {
     this.dangerousVideoUrl = 'https://www.youtube.com/embed/' + id;
     this.videoUrl =
       this.sanitizer.bypassSecurityTrustResourceUrl(this.dangerousVideoUrl.toString());
+    console.log(this.videoUrl);
   }
 
   ngOnInit(): void {
@@ -468,7 +474,13 @@ export class CourseDetailComponent implements OnInit {
                 Curso => {
                   this.curso = Curso['CURSOS'][0];
                   console.log(this.curso);
-                  this.updateVideoUrl(this.curso.RUTA_VID.slice(30));
+                  this.usuarioService.getIByCursoId(this.curso.ID_CURSO).subscribe(
+                    Usuarios => {
+                      this.capacitadores = Usuarios['USUARIOS'];
+                      console.log(this.capacitadores);
+                    }
+                  );
+                  this.updateVideoUrl(this.curso.RUTA_VID.slice(32));
                   this.moduloService.getByCursoId(this.curso.ID_CURSO).subscribe(
                     Modulos => {
                       this.modulos = Modulos['MODULOS'];

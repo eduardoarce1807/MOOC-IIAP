@@ -7,6 +7,10 @@ export class CursoLow {
     ruta_img: String;
     ruta_vid: String;
     url: String;
+    duracion: number;
+    certificacion_tit: String;
+    certificadora: String;
+    certificadora_2: String;
     objetivo: String;
     perfil_participante: String;
     metodologia: String;
@@ -14,6 +18,5 @@ export class CursoLow {
     fecha_creacion: String;
     estado: String;
     id_categoria_fk: number;
-    id_usuario_fk: number;
 
 }

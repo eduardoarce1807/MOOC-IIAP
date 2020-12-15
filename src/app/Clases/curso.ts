@@ -6,6 +6,10 @@ export class Curso{
     RUTA_IMG: String;
     RUTA_VID: String;
     URL: String;
+    DURACION: number;
+    CERTIFICACION_TIT: String;
+    CERTIFICADORA: String;
+    CERTIFICADORA_2: String;
     OBJETIVO: String;
     PERFIL_PARTICIPANTE: String;
     METODOLOGIA: String;
@@ -13,5 +17,4 @@ export class Curso{
     FECHA_CREACION: String;
     ESTADO: String;
     ID_CATEGORIA_FK: number;
-    ID_USUARIO_FK: number;
 }
