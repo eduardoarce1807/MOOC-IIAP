@@ -78,6 +78,10 @@ export class CourseDetailComponent implements OnInit {
     this.cargarCurso();
   }
 
+  irAlCurso(): void {
+    window.location.href = window.location + '/desarrollar';
+  }
+
   inscribirse(): void {
 
     var uActivo: any = localStorage.getItem("uActivo"); //Obtener datos de localStorage
@@ -112,6 +116,9 @@ export class CourseDetailComponent implements OnInit {
 
     $("#hdr-iiap").remove();
     $("#ftr-iiap").remove();
+
+    $("#hdr-adm").remove();
+    $("#lsb-adm").remove();
 
     $("#hdr-est").show();
     $("#lsb-est").show();

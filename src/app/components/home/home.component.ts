@@ -50,6 +50,9 @@ export class HomeComponent implements OnInit {
     $("#lsb-inst").remove();
     $("#ftr-inst").remove();
 
+    $("#hdr-adm").remove();
+    $("#lsb-adm").remove();
+
     $("#hdr-iiap").remove();
     $("#ftr-iiap").remove();
 

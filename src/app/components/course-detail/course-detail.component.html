@@ -50,7 +50,7 @@
                                 <li><button class="btn_adcart" id="btn-insc"
                                         (click)="inscribirse()">Inscribirse</button></li>
                                 <li><button class="btn_adcart" id="btn-go-cur"
-                                        >Ir al curso</button></li>
+                                        (click)="irAlCurso()" >Ir al curso</button></li>
                             </ul>
                             <div id="alertInsc" style="width: 40%;" class="alert alert-success mt-30" role="alert"></div>
                         </div>
@@ -208,83 +208,6 @@
                                                 </div>
                                                 <div class="_rate002">Valoración del curso</div>
                                             </div>
-                                            <div class="_rate003">
-                                                <div class="_rate004">
-                                                    <div class="progress progress1">
-                                                        <div class="progress-bar w-70" role="progressbar"
-                                                            aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
-                                                        </div>
-                                                    </div>
-                                                    <div class="rating-box">
-                                                        <span class="rating-star full-star"></span>
-                                                        <span class="rating-star full-star"></span>
-                                                        <span class="rating-star full-star"></span>
-                                                        <span class="rating-star full-star"></span>
-                                                        <span class="rating-star full-star"></span>
-                                                    </div>
-                                                    <div class="_rate002">70%</div>
-                                                </div>
-                                                <div class="_rate004">
-                                                    <div class="progress progress1">
-                                                        <div class="progress-bar w-30" role="progressbar"
-                                                            aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">
-                                                        </div>
-                                                    </div>
-                                                    <div class="rating-box">
-                                                        <span class="rating-star full-star"></span>
-                                                        <span class="rating-star full-star"></span>
-                                                        <span class="rating-star full-star"></span>
-                                                        <span class="rating-star full-star"></span>
-                                                        <span class="rating-star empty-star"></span>
-                                                    </div>
-                                                    <div class="_rate002">40%</div>
-                                                </div>
-                                                <div class="_rate004">
-                                                    <div class="progress progress1">
-                                                        <div class="progress-bar w-5" role="progressbar"
-                                                            aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">
-                                                        </div>
-                                                    </div>
-                                                    <div class="rating-box">
-                                                        <span class="rating-star full-star"></span>
-                                                        <span class="rating-star full-star"></span>
-                                                        <span class="rating-star full-star"></span>
-                                                        <span class="rating-star empty-star"></span>
-                                                        <span class="rating-star empty-star"></span>
-                                                    </div>
-                                                    <div class="_rate002">5%</div>
-                                                </div>
-                                                <div class="_rate004">
-                                                    <div class="progress progress1">
-                                                        <div class="progress-bar w-2" role="progressbar"
-                                                            aria-valuenow="2" aria-valuemin="0" aria-valuemax="100">
-                                                        </div>
-                                                    </div>
-                                                    <div class="rating-box">
-                                                        <span class="rating-star full-star"></span>
-                                                        <span class="rating-star full-star"></span>
-                                                        <span class="rating-star empty-star"></span>
-                                                        <span class="rating-star empty-star"></span>
-                                                        <span class="rating-star empty-star"></span>
-                                                    </div>
-                                                    <div class="_rate002">1%</div>
-                                                </div>
-                                                <div class="_rate004">
-                                                    <div class="progress progress1">
-                                                        <div class="progress-bar w-1" role="progressbar"
-                                                            aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
-                                                        </div>
-                                                    </div>
-                                                    <div class="rating-box">
-                                                        <span class="rating-star full-star"></span>
-                                                        <span class="rating-star empty-star"></span>
-                                                        <span class="rating-star empty-star"></span>
-                                                        <span class="rating-star empty-star"></span>
-                                                        <span class="rating-star empty-star"></span>
-                                                    </div>
-                                                    <div class="_rate002">1%</div>
-                                                </div>
-                                            </div>
                                         </div>
                                     </div>
                                     <div class="col-lg-7">
@@ -312,20 +235,7 @@
                                                 <p class="rvds10">Nam gravida elit a velit rutrum, eget dapibus ex
                                                     elementum. Interdum et malesuada fames ac ante ipsum primis in
                                                     faucibus. Fusce lacinia, nunc sit amet tincidunt venenatis.</p>
-                                                <div class="rpt100">
-                                                    <span>Was this review helpful?</span>
-                                                    <div class="radio--group-inline-container">
-                                                        <div class="radio-item">
-                                                            <input id="radio-1" name="radio" type="radio">
-                                                            <label for="radio-1" class="radio-label">Yes</label>
-                                                        </div>
-                                                        <div class="radio-item">
-                                                            <input id="radio-2" name="radio" type="radio">
-                                                            <label for="radio-2" class="radio-label">No</label>
-                                                        </div>
-                                                    </div>
-                                                    <a href="#" class="report145">Report</a>
-                                                </div>
+                                                
                                             </div>
                                             <div class="review_item">
                                                 <div class="review_usr_dt">
@@ -345,20 +255,7 @@
                                                 <p class="rvds10">Nam gravida elit a velit rutrum, eget dapibus ex
                                                     elementum. Interdum et malesuada fames ac ante ipsum primis in
                                                     faucibus. Fusce lacinia, nunc sit amet tincidunt venenatis.</p>
-                                                <div class="rpt100">
-                                                    <span>Was this review helpful?</span>
-                                                    <div class="radio--group-inline-container">
-                                                        <div class="radio-item">
-                                                            <input id="radio-3" name="radio1" type="radio">
-                                                            <label for="radio-3" class="radio-label">Yes</label>
-                                                        </div>
-                                                        <div class="radio-item">
-                                                            <input id="radio-4" name="radio1" type="radio">
-                                                            <label for="radio-4" class="radio-label">No</label>
-                                                        </div>
-                                                    </div>
-                                                    <a href="#" class="report145">Report</a>
-                                                </div>
+                                                
                                             </div>
                                             <div class="review_item">
                                                 <div class="review_usr_dt">
@@ -378,20 +275,7 @@
                                                 <p class="rvds10">Nam gravida elit a velit rutrum, eget dapibus ex
                                                     elementum. Interdum et malesuada fames ac ante ipsum primis in
                                                     faucibus. Fusce lacinia, nunc sit amet tincidunt venenatis.</p>
-                                                <div class="rpt100">
-                                                    <span>Was this review helpful?</span>
-                                                    <div class="radio--group-inline-container">
-                                                        <div class="radio-item">
-                                                            <input id="radio-5" name="radio2" type="radio">
-                                                            <label for="radio-5" class="radio-label">Yes</label>
-                                                        </div>
-                                                        <div class="radio-item">
-                                                            <input id="radio-6" name="radio2" type="radio">
-                                                            <label for="radio-6" class="radio-label">No</label>
-                                                        </div>
-                                                    </div>
-                                                    <a href="#" class="report145">Report</a>
-                                                </div>
+                                                
                                             </div>
                                             <div class="review_item">
                                                 <div class="review_usr_dt">

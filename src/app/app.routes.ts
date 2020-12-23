@@ -35,6 +35,11 @@ import {
     AuxrComponent
 } from './Login/sesion.paginas';
 
+import {
+    CursoAdminComponent,
+    UsuarioAdminComponent
+} from './Admin/admin.paginas'
+
 const app_routes: Routes = [
 
     { path: 'home', component: HomeComponent },
@@ -54,6 +59,9 @@ const app_routes: Routes = [
     { path: 'perfil-instructor-i', component: PerfilDocenteIComponent },
     { path: 'cursos-instructor', component: CoursesInstructorComponent },
     { path: 'curso-form', component: CreateCourseComponent },
+
+    { path: 'usuarios-admin', component: UsuarioAdminComponent },
+    { path: 'cursos-admin', component: CursoAdminComponent },
 
     { path: 'acerca-de', component: AboutUsComponent },
     { path: 'carrito', component: ShoppingCartComponent },

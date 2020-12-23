@@ -108,7 +108,7 @@ export class LoginComponent implements OnInit {
                 }
                 if(tipo == "Administrador"){
                   // alert("El pana es admin xd");
-                  window.location.href="/home-admin";
+                  window.location.href="/usuarios-admin";
                 }
 
               }, 2000);

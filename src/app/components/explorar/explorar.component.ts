@@ -39,6 +39,9 @@ export class ExplorarComponent implements OnInit {
     $("#hdr-iiap").remove();
     $("#ftr-iiap").remove();
 
+    $("#hdr-adm").remove();
+    $("#lsb-adm").remove();
+
     $("#hdr-est").show();
     $("#lsb-est").show();
     $("#ftr-est").show();

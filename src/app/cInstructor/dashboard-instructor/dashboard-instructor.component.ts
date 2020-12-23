@@ -25,6 +25,9 @@ export class DashboardInstructorComponent implements OnInit {
     $("#lsb-est").remove();
     $("#ftr-est").remove();
 
+    $("#hdr-adm").remove();
+    $("#lsb-adm").remove();
+
     $("#hdr-iiap").remove();
     $("#ftr-iiap").remove();
 

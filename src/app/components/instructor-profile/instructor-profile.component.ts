@@ -25,6 +25,9 @@ export class InstructorProfileComponent implements OnInit {
     $("#hdr-iiap").remove();
     $("#ftr-iiap").remove();
 
+    $("#hdr-adm").remove();
+    $("#lsb-adm").remove();
+
     $('#wrpr').addClass('wrapper _bg4586');
   }
 

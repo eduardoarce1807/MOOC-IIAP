@@ -1,0 +1,140 @@
+<div id="layoutSidenav_content">
+    <main>
+        <div class="container-fluid">
+            <h1 class="mt-4">Usuarios</h1>
+            <!-- <ol class="breadcrumb mb-4">
+                <li class="breadcrumb-item active">Dashboard</li>
+            </ol> -->
+
+            <div class="card mb-4 mt-30">
+                <div class="card-header">
+                    <i class="fas fa-table mr-1"></i>
+                    Lista de Usuarios
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="usuariosTable" width="100%" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Nombre Completo</th>
+                                    <th>DNI</th>
+                                    <th>Correo</th>
+                                    <th>Fecha Nac</th>
+                                    <th>Sexo</th>
+                                    <th>Usuario</th>
+                                    <th>Estado</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tfoot>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Nombre Completo</th>
+                                    <th>DNI</th>
+                                    <th>Correo</th>
+                                    <th>Fecha Nac</th>
+                                    <th>Sexo</th>
+                                    <th>Usuario</th>
+                                    <th>Estado</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </tfoot>
+                            <tbody>
+                                <tr *ngFor="let iU of usuarios">
+                                    <td>{{iU.ID_USUARIO}}</td>
+                                    <td>{{iU.NOMBRES + ' ' + iU.AP_PATERNO + ' ' + iU.AP_MATERNO}}</td>
+                                    <td>{{iU.DNI}}</td>
+                                    <td>{{iU.CORREO}}</td>
+                                    <td>{{iU.FECHA_NACIMIENTO | date:'dd-MM-yyyy' }}</td>
+                                    <td>{{iU.SEXO}}</td>
+                                    <td>{{iU.USUARIO}}</td>
+                                    <td *ngIf="iU.ESTADO == '1'">Activo</td>
+                                    <td *ngIf="iU.ESTADO == '0'">Inactivo</td>
+                                    <td class="text-center">
+                                        <a href="#" title="Edit" class="gray-s"><i
+                                                class="uil uil-edit-alt"></i></a>
+                                        <a href="#" title="Delete" class="gray-s"><i
+                                                class="uil uil-trash-alt"></i></a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                    Registrar Usuario
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
+                    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Registrar Usuario XD</h5>
+                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal"
+                                    aria-label="Close">X</button>
+                            </div>
+                            <div class="modal-body">
+                                <form class="row g-3">
+                                    <div class="col-12">
+                                        <label class="form-label">Nombres:</label>
+                                        <input [(ngModel)]="usuarioLow.nombres" name="u_nombres" type="text" class="form-control" id="u_nombres" placeholder="Nombres">
+                                    </div>
+                                    <div class="col-md-12 mt-10">
+                                        <label class="form-label">Apellidos:</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input [(ngModel)]="usuarioLow.ap_paterno" name="u_ap_paterno" type="text" class="form-control" id="u_ap_paterno"
+                                            placeholder="Apellido Paterno">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input [(ngModel)]="usuarioLow.ap_materno" name="u_ap_materno" type="text" class="form-control" id="u_ap_materno"
+                                            placeholder="Apellido Materno">
+                                    </div>
+                                    <div class="col-md-12 mt-10">
+                                        <label class="form-label">DNI:</label>
+                                        <input [(ngModel)]="usuarioLow.dni" name="u_dni" type="text" class="form-control" id="u_dni" placeholder="DNI">
+                                    </div>
+                                    <div class="col-md-6 mt-10">
+                                        <label class="form-label">Fecha de Nacimiento:</label>
+                                        <input [(ngModel)]="usuarioLow.fecha_nacimiento" name="u_fecha_nacimiento" type="date" class="form-control" id="u_fecha_nacimiento">
+                                    </div>
+                                    <div class="col-md-6 mt-10">
+                                        <label class="form-label">Sexo:</label>
+                                        <select id="u_sexo" class="form-control">
+                                            <option value="">Seleccione...</option>
+                                            <option value="M">Masculino</option>
+                                            <option value="F">Femenino</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-12 mt-10">
+                                        <label class="form-label">Correo:</label>
+                                        <input [(ngModel)]="usuarioLow.correo" name="u_correo" type="text" class="form-control" id="u_correo" placeholder="Correo">
+                                    </div>
+                                    <div class="col-md-12 mt-10">
+                                        <label class="form-label">Usuario:</label>
+                                        <input [(ngModel)]="usuarioLow.usuario" name="u_usuario" type="text" class="form-control" id="u_usuario" placeholder="Usuario">
+                                    </div>
+                                    <div class="col-md-12 mt-10">
+                                        <label class="form-label">Clave:</label>
+                                        <input [(ngModel)]="usuarioLow.clave" name="u_clave" type="password" class="form-control" id="u_clave" placeholder="Clave">
+                                    </div>
+
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                <button (click)='crearUsuario()' type="submit" class="btn btn-primary">Guardar Usuario</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <app-footer-admin></app-footer-admin>
+</div>

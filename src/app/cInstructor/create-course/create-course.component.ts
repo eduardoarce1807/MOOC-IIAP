@@ -74,6 +74,29 @@ export class CreateCourseComponent implements OnInit {
 
     this.cargar();
 
+    this.curso = {
+      "ID_CURSO": 1,
+      "TITULO": "Especialización en Identificación y Formulación de Proyectos de Innovación",
+      "SUBTITULO": null,
+      "PRECIO": null,
+      "RUTA_IMG": "https://firebasestorage.googleapis.com/v0/b/mooc-iiap2020.appspot.com/o/Curso%201.jpg?alt=media&token=9e66a136-fc2c-45ed-991c-cbbe9d89bab7",
+      "RUTA_VID": "https://www.youtube.com/watch?v=RPHdeC-QQOM",
+      "URL": "esp-ident-form-proy-inn",
+      "DURACION": 320,
+      "CERTIFICACION_TIT": "Especialista en Identificación y Formulación de Proyectos de Innovación",
+      "CERTIFICADORA": "Universidad Nacional Intercultural Fabiola Salazar Leguía de Bagua (UNIFSLB)",
+      "CERTIFICADORA_2": "Universidad Nacional Toribio Rodríguez de Mendoza de Amazonas (UNTRM)",
+      "OBJETIVO": "Formar especialistas en identificación y formulación de proyectos de innovación, con énfasis en pesca y acuicultura andinoamazónica, con altos niveles de conocimientos, habilidades y destrezas, capaces de responder a demandas de las empresas, organizaciones, productores y puedan convertirse en gestores sistémicos de innovación.",
+      "PERFIL_PARTICIPANTE": null,
+      "METODOLOGIA": null,
+      "COMPETENCIAS": null,
+      "FECHA_CREACION": "2020-12-15T05:00:00.000+00:00",
+      "ESTADO": "1",
+      "ID_CATEGORIA_FK": 1
+    }
+
+    this.listarModulos();
+
     $("#btn-act-mod").hide();
     $("#btn-act-ses").hide();
     $("#btn-act-rec-ap").hide();
@@ -181,7 +204,7 @@ export class CreateCourseComponent implements OnInit {
     this.moduloLow.titulo = modulo.TITULO;
     this.moduloLow.descripcion = modulo.DESCRIPCION;
     this.moduloLow.id_curso_fk = modulo.ID_CURSO_FK;
-    
+
     $("#btn-act-mod").show();
     $("#btn-sav-mod").hide();
     console.log(this.moduloLow);
@@ -195,7 +218,7 @@ export class CreateCourseComponent implements OnInit {
     );
   }
 
-  actualizarModulo(): void{
+  actualizarModulo(): void {
     this.moduloService.update(this.moduloLow).subscribe(
       Response => {
         this.listarModulos();
@@ -217,27 +240,6 @@ export class CreateCourseComponent implements OnInit {
   }
 
   crearModulo(): void {
-
-    this.curso = {
-      "ID_CURSO": 3,
-      "TITULO": "CURSO DE PRUEBAAAA XD",
-      "SUBTITULO": null,
-      "PRECIO": 0,
-      "RUTA_IMG": "https://firebasestorage.googleapis.com/v0/b/mooc-iiap2020.appspot.com/o/curso-hor.svg?alt=media&token=ff4acd24-8930-4f30-822b-fff08ce87f39",
-      "RUTA_VID": "https://www.youtube.com/watch?v=X8avbciUP3c",
-      "URL": "url123",
-      "DURACION": 120,
-      "CERTIFICACION_TIT": "tedasd",
-      "CERTIFICADORA": "cert",
-      "CERTIFICADORA_2": null,
-      "OBJETIVO": "obj",
-      "PERFIL_PARTICIPANTE": null,
-      "METODOLOGIA": null,
-      "COMPETENCIAS": null,
-      "FECHA_CREACION": "2020-12-22T05:00:00.000+00:00",
-      "ESTADO": "1",
-      "ID_CATEGORIA_FK": 1
-  }
 
     if (jQuery.isEmptyObject(this.curso)) {
       alert("Complete la informacion general del curso, primero.");
@@ -266,7 +268,7 @@ export class CreateCourseComponent implements OnInit {
     this.sesionLow.titulo = sesion.TITULO;
     this.sesionLow.descripcion = sesion.DESCRIPCION;
     this.sesionLow.id_modulo_fk = sesion.ID_MODULO_FK;
-    
+
     $("#btn-act-ses").show();
     $("#btn-sav-ses").hide();
     console.log(this.sesionLow);
@@ -306,7 +308,7 @@ export class CreateCourseComponent implements OnInit {
         );
       }
     );
-    
+
   }
 
   crearSesion(): void {
@@ -316,9 +318,9 @@ export class CreateCourseComponent implements OnInit {
     if (jQuery.isEmptyObject(this.curso)) {
       alert("Complete la informacion general del curso, primero.");
     } else {
-      if(this.modulos.length == 0){
+      if (this.modulos.length == 0) {
         alert("Registre algún módulo, primero.");
-      }else{
+      } else {
         this.moduloService.get(+$("#mod_select").val()).subscribe(
           Modulo => {
             this.modulo = Modulo['MODULOS'][0];
@@ -344,13 +346,13 @@ export class CreateCourseComponent implements OnInit {
   editarRec_Ap(rec_ap: Rec_Ap): void {
     $("#titulo_sesion").val(rec_ap.TITULO);
 
-    if(+$("#sel-tip-rec-ap").val() == 1 || +$("#sel-tip-rec-ap").val() == 2){
+    if (+$("#sel-tip-rec-ap").val() == 1 || +$("#sel-tip-rec-ap").val() == 2) {
       this.rec_apLow.id_rec_ap = rec_ap.ID_REC_AP;
       this.rec_apLow.titulo = rec_ap.TITULO;
       this.rec_apLow.url = rec_ap.URL;
       this.rec_apLow.id_sesion_fk = rec_ap.ID_SESION_FK;
       this.rec_apLow.id_tipo_rec_ap_fk = rec_ap.ID_TIPO_REC_AP_FK;
-    } else if (+$("#sel-tip-rec-ap").val() == 3){
+    } else if (+$("#sel-tip-rec-ap").val() == 3) {
       this.rec_apLow.id_rec_ap = rec_ap.ID_REC_AP;
       this.rec_apLow.titulo = rec_ap.TITULO;
       this.rec_apLow.id_sesion_fk = rec_ap.ID_SESION_FK;
@@ -381,8 +383,8 @@ export class CreateCourseComponent implements OnInit {
     );
   }
 
-  listarRecs_Ap(): void{
-  
+  listarRecs_Ap(): void {
+
     this.rec_apService.getBySesionId(+$("#list-ses").val()).subscribe(
       Recs_Ap => {
         this.recs_apPorSesion = Recs_Ap['RECS_AP'];
@@ -397,20 +399,20 @@ export class CreateCourseComponent implements OnInit {
     if (jQuery.isEmptyObject(this.curso)) {
       alert("Complete la informacion general del curso, primero.");
     } else {
-      if(this.modulos.length == 0){
+      if (this.modulos.length == 0) {
         alert("Registre algún módulo, primero.");
-      }else{
-        if(this.sesiones.length == 0){
+      } else {
+        if (this.sesiones.length == 0) {
           alert("Registre alguna sesión, primero.");
-        }else{
+        } else {
           this.sesionService.get(+$("#ses_select").val()).subscribe(
             Sesion => {
               this.sesion = Sesion['SESIONES'][0];
               console.log(this.sesion);
 
-              if(+$("#sel-tip-rec-ap").val() == 1){
+              if (+$("#sel-tip-rec-ap").val() == 1) {
                 this.rec_apLow.id_tipo_rec_ap_fk = 1;
-              }else if (+$("#sel-tip-rec-ap").val() == 2){
+              } else if (+$("#sel-tip-rec-ap").val() == 2) {
                 this.rec_apLow.id_tipo_rec_ap_fk = 2;
               }
 
@@ -446,6 +448,9 @@ export class CreateCourseComponent implements OnInit {
     $("#hdr-est").remove();
     $("#lsb-est").remove();
     $("#ftr-est").remove();
+
+    $("#hdr-adm").remove();
+    $("#lsb-adm").remove();
 
     $("#hdr-iiap").remove();
     $("#ftr-iiap").remove();

@@ -48,8 +48,11 @@ import { AuxrComponent } from './Login/auxr/auxr.component';
 import { PerfilDocenteIComponent } from './cInstructor/perfil-docente-i/perfil-docente-i.component';
 import { AuxlComponent } from './Login/auxl/auxl.component';
 import { DesarrollarCursoComponent } from './components/desarrollar-curso/desarrollar-curso.component';
-import { NavbarComponent } from './Admin/navbar/navbar.component';
-import { UsuarioComponent } from './Admin/usuario/usuario.component';
+import { CursoAdminComponent } from './Admin/curso-admin/curso-admin.component';
+import { UsuarioAdminComponent } from './Admin/usuario-admin/usuario-admin.component';
+import { FooterAdminComponent } from './Admin/footer-admin/footer-admin.component';
+import { LeftSidebarAdminComponent } from './Admin/left-sidebar-admin/left-sidebar-admin.component';
+import { NavbarAdminComponent } from './Admin/navbar-admin/navbar-admin.component';
 
 
 @NgModule({
@@ -84,8 +87,11 @@ import { UsuarioComponent } from './Admin/usuario/usuario.component';
     PerfilDocenteIComponent,
     AuxlComponent,
     DesarrollarCursoComponent,
-    NavbarComponent,
-    UsuarioComponent
+    CursoAdminComponent,
+    UsuarioAdminComponent,
+    FooterAdminComponent,
+    LeftSidebarAdminComponent,
+    NavbarAdminComponent
   ],
   imports: [
     BrowserModule,

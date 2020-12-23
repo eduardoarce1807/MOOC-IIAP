@@ -1,0 +1,88 @@
+<div id="layoutSidenav_content">
+    <main>
+        <div class="container-fluid">
+            <h1 class="mt-4">Cursos</h1>
+            <!-- <ol class="breadcrumb mb-4">
+                <li class="breadcrumb-item active">Dashboard</li>
+            </ol> -->
+
+            <div class="card mb-6 mt-30">
+                <div class="card-header">
+                    <i class="fas fa-table mr-1"></i>
+                    Lista de Cursos
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="cursosTable" width="100%" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Titulo</th>
+                                    <th>Precio</th>
+                                    <th>Fecha Creación</th>
+                                    <th>Estado</th>
+                                    <th>Categoría</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tfoot>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Titulo</th>
+                                    <th>Precio</th>
+                                    <th>Fecha Creación</th>
+                                    <th>Estado</th>
+                                    <th>Categoría</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </tfoot>
+                            <tbody>
+                                <tr *ngFor="let iC of cursos">
+                                    <td>{{iC.ID_CURSO}}</td>
+                                    <td>{{iC.TITULO}}</td>
+                                    <td *ngIf="iC.PRECIO == null || iC.PRECIO == 0">Gratis</td>
+                                    <td *ngIf="iC.PRECIO != null && iC.PRECIO != 0">{{iC.PRECIO}}</td>
+                                    <td>{{iC.FECHA_CREACION | date:'dd-MM-yyyy' }}</td>
+                                    <td *ngIf="iC.ESTADO == '1'">Activo</td>
+                                    <td *ngIf="iC.ESTADO == '0'">Inactivo</td>
+                                    <td>{{categorias[iC.ID_CATEGORIA_FK-1].NOMBRE}}</td>
+                                    <td class="text-center">
+                                        <a href="#" title="Edit" class="gray-s"><i
+                                                class="uil uil-edit-alt"></i></a>
+                                        <a href="#" title="Delete" class="gray-s"><i
+                                                class="uil uil-trash-alt"></i></a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!-- Button trigger modal -->
+            <button style="display: none;" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Launch demo modal
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            ...
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <app-footer-admin></app-footer-admin>
+</div>

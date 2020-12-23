@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LeftSidebarComponent } from './left-sidebar.component';
+import { FooterAdminComponent } from './footer-admin.component';
 
-describe('LeftSidebarComponent', () => {
-  let component: LeftSidebarComponent;
-  let fixture: ComponentFixture<LeftSidebarComponent>;
+describe('FooterAdminComponent', () => {
+  let component: FooterAdminComponent;
+  let fixture: ComponentFixture<FooterAdminComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LeftSidebarComponent ]
+      declarations: [ FooterAdminComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(LeftSidebarComponent);
+    fixture = TestBed.createComponent(FooterAdminComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
