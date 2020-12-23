@@ -26,7 +26,6 @@
                                 <a href="#" class="fcrse_img" data-toggle="modal" data-target="#videoModal">
                                     <img src="{{curso.RUTA_IMG}}" alt="">
                                     <div class="course-overlay">
-                                        <div class="badge_seller">Bestseller</div>
                                         <span class="play_btn1"><i class="uil uil-play"></i></span>
                                         <span class="_215b02">Preview del curso</span>
                                     </div>
@@ -45,11 +44,15 @@
                                 (100 reviews)
                             </div>
                             <div class="_215b05">
-                                200 estudiantes
+                                {{inscripciones.length}} estudiantes.
                             </div>
                             <ul class="_215b31">
-                                <li><button class="btn_adcart" id="btn-insc" (click)="inscribirse()">Inscribirse</button></li>
+                                <li><button class="btn_adcart" id="btn-insc"
+                                        (click)="inscribirse()">Inscribirse</button></li>
+                                <li><button class="btn_adcart" id="btn-go-cur"
+                                        >Ir al curso</button></li>
                             </ul>
+                            <div id="alertInsc" style="width: 40%;" class="alert alert-success mt-30" role="alert"></div>
                         </div>
                     </div>
                 </div>
@@ -141,8 +144,12 @@
                                     <div class="_scd123">
                                         <div class="row">
                                             <div class="col-lg-12">
-                                                <ul class="_htg452 _abcd145">												
-                                                    <li *ngFor="let itI of capacitadores"><div class="_5f7g15"><i class="fas fa-check-circle"></i><span>{{itI.NOMBRES + ' ' +itI.AP_PATERNO + ' ' + itI.AP_MATERNO}}</span></div></li>
+                                                <ul class="_htg452 _abcd145">
+                                                    <li *ngFor="let itI of capacitadores">
+                                                        <div class="_5f7g15"><i
+                                                                class="fas fa-check-circle"></i><span>{{itI.NOMBRES + '
+                                                                ' +itI.AP_PATERNO + ' ' + itI.AP_MATERNO}}</span></div>
+                                                    </li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -150,37 +157,37 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="tab-pane fade" id="nav-courses" role="tabpanel">
+                        <div id="contM" class="tab-pane fade" id="nav-courses" role="tabpanel">
 
-                            <div id="contM" class="crse_content">
-                                <h3>tit modulo</h3>
+                            <div *ngFor="let iM of modulos" class="crse_content">
+                                <h3>Módulo {{iM.ID_MODULO}} - {{iM.TITULO}}</h3>
                                 <div id="accordion" class="ui-accordion ui-widget ui-helper-reset">
-                                    <a href="javascript:void(0)"
-                                        class="accordion-header ui-accordion-header ui-helper-reset ui-state-default ui-accordion-icons ui-corner-all">
-                                        <div class="section-header-left">
-                                            <span class="section-title-wrapper">
-                                                <i class='uil uil-presentation-play crse_icon'></i>
-                                                <span class="section-title-text">titulo sesion</span>
-                                            </span>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom">
-                                    <div class="lecture-container">
-                                        <div class="left-content">
-                                            <i class='uil uil-play-circle icon_142'></i>
-                                            <div class="top">
-                                                <div class="title">titulo rec</div>
+                                    <div *ngFor="let iS of sesiones">
+                                        <a *ngIf="iS.ID_MODULO_FK == iM.ID_MODULO" href="javascript:void(0)"
+                                            class="accordion-header ui-accordion-header ui-helper-reset ui-state-default ui-accordion-icons ui-corner-all">
+                                            <div class="section-header-left">
+                                                <span class="section-title-wrapper">
+                                                    <i class='uil uil-presentation-play crse_icon'></i>
+                                                    <span class="section-title-text">{{iS.TITULO}}</span>
+                                                </span>
                                             </div>
-                                        </div>
-                                        <div class="details">
-                                            <a href="#" class="preview-text">Preview</a>
-                                            <span class="content-summary">01.40</span>
+                                        </a>
+                                        <div
+                                            class="ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom">
+                                            <div *ngFor="let iR_A of recs_ap">
+                                                <div *ngIf="iR_A.ID_SESION_FK == iS.ID_SESION && iS.ID_MODULO_FK == iM.ID_MODULO"
+                                                    class="lecture-container">
+                                                    <div class="left-content">
+                                                        <i class='uil uil-play-circle icon_142'></i>
+                                                        <div class="top">
+                                                            <div class="title">{{iR_A.TITULO}}</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-
-                                
                             </div>
 
                         </div>
@@ -205,8 +212,7 @@
                                                 <div class="_rate004">
                                                     <div class="progress progress1">
                                                         <div class="progress-bar w-70" role="progressbar"
-                                                            aria-valuenow="70" aria-valuemin="0"
-                                                            aria-valuemax="100">
+                                                            aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
                                                         </div>
                                                     </div>
                                                     <div class="rating-box">
@@ -221,8 +227,7 @@
                                                 <div class="_rate004">
                                                     <div class="progress progress1">
                                                         <div class="progress-bar w-30" role="progressbar"
-                                                            aria-valuenow="30" aria-valuemin="0"
-                                                            aria-valuemax="100">
+                                                            aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">
                                                         </div>
                                                     </div>
                                                     <div class="rating-box">
@@ -237,8 +242,7 @@
                                                 <div class="_rate004">
                                                     <div class="progress progress1">
                                                         <div class="progress-bar w-5" role="progressbar"
-                                                            aria-valuenow="10" aria-valuemin="0"
-                                                            aria-valuemax="100">
+                                                            aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">
                                                         </div>
                                                     </div>
                                                     <div class="rating-box">

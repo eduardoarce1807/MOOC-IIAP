@@ -1,7 +1,7 @@
 export class Inscripcion {
 
     ID_INSCRIPCION: number;
-    NOTA: number;
+    NOTA_FINAL: number;
     PROGRESO: number;
     ESTADO: String;
     ID_CURSO_FK: number;

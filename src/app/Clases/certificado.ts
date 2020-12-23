@@ -1,7 +1,7 @@
 export class Certificado{
 
-    ID_CERTIFICADO: number;
+    CODIGO: String;
     ESTADO: string;
-    ID_REGISTRO_FK: number;
+    ID_INSCRIPCION_FK: number;
 
 }

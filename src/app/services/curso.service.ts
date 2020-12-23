@@ -38,9 +38,14 @@ export class CursoService {
         return this.http.get(`${this.urlEndPoint}/url?url=${url}`)
     }
 
+    // obteniendo datos por DNI
+    getByIdUsuario(id: number): Observable<any> {
+        return this.http.get(`${this.urlEndPoint}/usuario?id=${id}`)
+    }
+
     // metodo actualizar 
     update(cursoLow: CursoLow): Observable<CursoLow> {
-        return this.http.put<CursoLow>(`${this.urlEndPoint}/update/${cursoLow.id_usuario}`, cursoLow, { headers: this.httpHeaders })
+        return this.http.put<CursoLow>(`${this.urlEndPoint}/update/${cursoLow.id_curso}`, cursoLow, { headers: this.httpHeaders })
     }
 
     // agregando el eliminar 

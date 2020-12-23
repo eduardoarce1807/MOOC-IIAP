@@ -34,6 +34,11 @@ export class CtrlVistaService {
         return this.http.get(`${this.urlEndPoint}/${id}`)
     }
 
+    // obteniendo datos por ID
+    getByIdRecAp(id: number): Observable<any> {
+        return this.http.get(`${this.urlEndPoint}/rec-ap?id=${id}`)
+    }
+
     // metodo actualizar 
     update(Ctrl_VistaLow: Ctrl_VistaLow): Observable<Ctrl_VistaLow> {
         return this.http.put<Ctrl_VistaLow>(`${this.urlEndPoint}/update/${Ctrl_VistaLow.id_ctrl_vista}`, Ctrl_VistaLow, { headers: this.httpHeaders })

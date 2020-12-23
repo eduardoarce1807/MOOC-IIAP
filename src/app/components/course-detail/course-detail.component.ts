@@ -34,6 +34,9 @@ export class CourseDetailComponent implements OnInit {
   usuarios: Usuario[];
   curso: Curso = new Curso();
   inscripcion: InscripcionLow = new InscripcionLow();
+  inscripciones: Inscripcion[];
+
+
   modulos: Modulo[];
   sesiones: Sesion[];
   recs_ap: Rec_Ap[];
@@ -68,6 +71,9 @@ export class CourseDetailComponent implements OnInit {
 
   ngOnInit(): void {
 
+    $("#alertInsc").hide();
+    $("#btn-go-cur").hide();
+
     this.cargar();
     this.cargarCurso();
   }
@@ -78,16 +84,21 @@ export class CourseDetailComponent implements OnInit {
     uActivo = JSON.parse(uActivo); // Covertir a objeto
     if (uActivo === null) {// Si no existe, creamos un array vacio.
       uActivo = []; // es es un  array
-    }else{
+    } else {
       this.usuA = JSON.parse(uActivo[0]);
+
+      this.inscripcion.id_curso_fk = this.curso.ID_CURSO;
+      this.inscripcion.id_usuario_fk = this.usuA.id_usuario;
+
+      console.log(this.inscripcion);
+
+      this.inscripcionService.create(this.inscripcion).subscribe();
+
+      $("#alertInsc").show();
+      $("#alertInsc").text("Inscripción realizada.");
+
     }
 
-    this.inscripcion.id_curso_fk = this.curso.ID_CURSO;
-    this.inscripcion.id_usuario_fk = this.usuA.id_usuario;
-
-    console.log(this.inscripcion);
-
-    //this.inscripcionService.create(this.inscripcion).subscribe();
   }
 
   cargar(): void {
@@ -387,77 +398,6 @@ export class CourseDetailComponent implements OnInit {
     })(window, document);
   }
 
-  timer = ms => new Promise(res => setTimeout(res, ms));
-
-  modsx: string = "";
-
-  async load3(num: Rec_Ap[]) {
-    for(var i = 1; i<num.length; i++){
-      console.log(num);
-      this.modsx = this.modsx + '<div class="lecture-container">'+
-                                  '<div class="left-content">'+
-                                    '<i class="uil uil-play-circle icon_142"></i>'+
-                                    '<div class="top">'+
-                                      '<div class="title">'+num[i-1].TITULO+'</div>'+
-                                    '</div>'+
-                                  '</div>'+
-                                  '<div class="details">'+
-                                    '<a href="#" class="preview-text">Preview</a>'+
-                                    '<span class="content-summary">01.40</span>'+
-                                  '</div>'+
-                                '</div>';
-      await this.timer(500); // then the created Promise can be awaited
-    }
-
-  }
-
-  async load2(num: Sesion[]) {
-    for(var i = 1; i<= num.length; i++){
-      
-      this.rec_apService.getBySesionId(i).subscribe(
-        Recs_ApPorSesion => {
-          console.log(i);
-          this.modsx = this.modsx + '<div id="accordion" class="ui-accordion ui-widget ui-helper-reset">'+
-                                      '<a href="javascript:void(0)" class="accordion-header ui-accordion-header ui-helper-reset ui-state-default ui-accordion-icons ui-corner-all">'+
-                                        '<div class="section-header-left">'+
-                                          '<span class="section-title-wrapper">'+
-                                            '<i class="uil uil-presentation-play crse_icon"></i>'+
-                                            '<span class="section-title-text">'+num[i-1].TITULO+'</span>'+
-                                          '</span>'+
-                                        '</div>'+
-                                      '</a>'+
-                                    '</div>'+
-                                    '<div class="ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom">';
-          
-          this.load3(Recs_ApPorSesion['RECS_AP']);
-          
-          this.modsx = this.modsx + '</div>';
-          
-        }
-      );
-
-      await this.timer(3000); // then the created Promise can be awaited
-      
-    }
-    
-  }
-
-  async load () { // We need to wrap the loop into an async function for this to work
-    for (var i = 1; i <= this.modulos.length; i++) {
-      this.sesionService.getByModuloId(i).subscribe(
-        SesionesPorModulo => {
-          console.log(i);
-          this.modsx = this.modsx + '<h3>'+this.modulos[i-1].TITULO+'</h3>';
-          this.load2(SesionesPorModulo['SESIONES']);
-          
-        }
-      );
-      await this.timer(10000); // then the created Promise can be awaited
-    }
-    
-    $("#contM").append(this.modsx);
-  }
-
   cargarCurso(): void {
 
     this.activatedRoute.params.subscribe(
@@ -474,6 +414,27 @@ export class CourseDetailComponent implements OnInit {
                 Curso => {
                   this.curso = Curso['CURSOS'][0];
                   console.log(this.curso);
+                  //
+                  var uActivo: any = localStorage.getItem("uActivo"); //Obtener datos de localStorage
+                  uActivo = JSON.parse(uActivo); // Covertir a objeto
+                  if (uActivo === null) {// Si no existe, creamos un array vacio.
+                    uActivo = []; // es es un  array
+                  } else {
+                    this.usuA = JSON.parse(uActivo[0]);
+                    var isInscritoX: Inscripcion[];
+
+                    this.inscripcionService.getByIdCurIdUsu(this.curso.ID_CURSO, this.usuA.id_usuario).subscribe(
+                      Inscripcion => {
+                        isInscritoX = Inscripcion['INSCRIPCIONES'];
+                        if (isInscritoX.length == 1) {
+                          $("#btn-insc").hide();
+                          $("#btn-go-cur").show();
+                        }
+                      }
+                    );
+
+                  }
+                  //
                   this.usuarioService.getIByCursoId(this.curso.ID_CURSO).subscribe(
                     Usuarios => {
                       this.capacitadores = Usuarios['USUARIOS'];
@@ -481,41 +442,49 @@ export class CourseDetailComponent implements OnInit {
                     }
                   );
                   this.updateVideoUrl(this.curso.RUTA_VID.slice(32));
+                  this.inscripcionService.getByIdCur(this.curso.ID_CURSO).subscribe(
+                    Inscripciones => {
+                      this.inscripciones = Inscripciones['INSCRIPCIONES'];
+                      console.log(this.inscripciones);
+                    }
+                  );
                   this.moduloService.getByCursoId(this.curso.ID_CURSO).subscribe(
                     Modulos => {
                       this.modulos = Modulos['MODULOS'];
                       console.log(this.modulos);
-                      this.sesionService.getByCursoId(this.curso.ID_CURSO).subscribe(
-                        Sesiones => {
-                          this.sesiones = Sesiones['SESIONES'];
-                          console.log(this.sesiones);
-                          this.rec_apService.getByCursoId(this.curso.ID_CURSO).subscribe(
-                            Recs_Ap => {
-                              this.recs_ap = Recs_Ap['RECS_AP'];
-                              console.log(this.recs_ap);
-
-                              var modsx: string;
-
-                              this.load();
-
-                            }
-                          );
-                        }
-                      );
                     }
                   )
+                  this.sesionService.getByCursoId(this.curso.ID_CURSO).subscribe(
+                    Sesiones => {
+                      this.sesiones = Sesiones['SESIONES'];
+                      console.log(this.sesiones);
+                    }
+                  );
+                  this.rec_apService.getByCursoId(this.curso.ID_CURSO).subscribe(
+                    Recs_Ap => {
+                      this.recs_ap = Recs_Ap['RECS_AP'];
+                      console.log("----------------")
+                      console.log(this.modulos);
+                      console.log(this.sesiones);
+                      console.log(this.recs_ap);
+
+
+
+                    }
+                  );
                 }
               );
             }
           );
 
-          
+
 
 
         }
 
       }
     );
+
   }
 
 }

@@ -47,6 +47,9 @@ import { RegisterComponent } from './Login/register/register.component';
 import { AuxrComponent } from './Login/auxr/auxr.component';
 import { PerfilDocenteIComponent } from './cInstructor/perfil-docente-i/perfil-docente-i.component';
 import { AuxlComponent } from './Login/auxl/auxl.component';
+import { DesarrollarCursoComponent } from './components/desarrollar-curso/desarrollar-curso.component';
+import { NavbarComponent } from './Admin/navbar/navbar.component';
+import { UsuarioComponent } from './Admin/usuario/usuario.component';
 
 
 @NgModule({
@@ -79,7 +82,10 @@ import { AuxlComponent } from './Login/auxl/auxl.component';
     RegisterComponent,
     AuxrComponent,
     PerfilDocenteIComponent,
-    AuxlComponent
+    AuxlComponent,
+    DesarrollarCursoComponent,
+    NavbarComponent,
+    UsuarioComponent
   ],
   imports: [
     BrowserModule,

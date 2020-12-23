@@ -37,4 +37,15 @@ export class CargarScriptsService {
     }
   }
 
+  CSSURL( url: string, integr: string, id: string){
+    let css = document.createElement("link");
+    css.href = url;
+    css.rel = "stylesheet";
+    css.integrity = integr;
+    css.crossOrigin = "anonymous";
+    css.id = id;
+    let head = document.getElementsByTagName("head")[0];
+    head.appendChild(css);
+  }
+
 }

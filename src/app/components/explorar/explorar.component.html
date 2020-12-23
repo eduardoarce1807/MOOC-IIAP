@@ -26,15 +26,8 @@
                             <div class="fcrse_1">
                                 <a [routerLink]="['/cursos', iterador.URL]" class="fcrse_img">
                                     <img src="{{iterador.RUTA_IMG}}" alt="" >
-                                    <div class="course-overlay">
-                                        <span class="play_btn1"><i class="uil uil-play"></i></span>
-                                    </div>
                                 </a>
                                 <div class="fcrse_content">
-                                    <div class="vdtodt">
-                                        <span class="vdt14">322 vistas</span>
-                                        <span class="vdt14">Hace 2 días</span>
-                                    </div>
                                     <a [routerLink]="['/cursos', iterador.URL]" class="crse14s">{{iterador.TITULO}}</a>
                                     <a href="#" class="crse-cate">{{categorias[(iterador.ID_CATEGORIA_FK)-1].NOMBRE}}</a>
                                     <!-- <div class="auth1lnkprce">

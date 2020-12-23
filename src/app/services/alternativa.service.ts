@@ -34,6 +34,16 @@ export class AlternativaService {
     return this.http.get(`${this.urlEndPoint}/${id}`)
   }
 
+  // obteniendo datos por ID
+  getByIdPregunta(id: number): Observable<any> {
+    return this.http.get(`${this.urlEndPoint}/pregunta?id=${id}`)
+  }
+
+  // obteniendo datos por ID
+  getByIdRecAp(id: number): Observable<any> {
+    return this.http.get(`${this.urlEndPoint}/rec-ap?id=${id}`)
+  }
+
   // metodo actualizar 
   update(AlternativaLow: AlternativaLow): Observable<AlternativaLow> {
     return this.http.put<AlternativaLow>(`${this.urlEndPoint}/update/${AlternativaLow.id_alternativa}`, AlternativaLow, { headers: this.httpHeaders })

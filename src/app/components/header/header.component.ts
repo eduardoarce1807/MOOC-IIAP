@@ -17,6 +17,10 @@ export class HeaderComponent implements OnInit {
   constructor() {
   }
 
+  logout(): void {
+    location.href = "/login";
+  }
+
   ngOnInit(): void {
 
     var uActivo: any = localStorage.getItem("uActivo"); //Obtener datos de localStorage

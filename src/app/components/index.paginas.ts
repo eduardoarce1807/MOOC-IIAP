@@ -6,3 +6,4 @@ export { SettingsComponent } from './settings/settings.component';
 export { CourseDetailComponent } from './course-detail/course-detail.component';
 export { ExplorarComponent } from './explorar/explorar.component';
 export { FeedbackComponent } from './feedback/feedback.component';
+export { DesarrollarCursoComponent } from './desarrollar-curso/desarrollar-curso.component';

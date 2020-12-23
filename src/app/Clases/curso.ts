@@ -15,6 +15,6 @@ export class Curso{
     METODOLOGIA: String;
     COMPETENCIAS: String;
     FECHA_CREACION: String;
-    ESTADO: String;
+    ESTADO: string;
     ID_CATEGORIA_FK: number;
 }

@@ -34,6 +34,11 @@ export class PreguntaService {
         return this.http.get(`${this.urlEndPoint}/${id}`)
     }
 
+    // obteniendo datos por ID
+    getByIdRecAp(id: number): Observable<any> {
+        return this.http.get(`${this.urlEndPoint}/rec-ap?id=${id}`)
+    }
+
     // metodo actualizar 
     update(PreguntaLow: PreguntaLow): Observable<PreguntaLow> {
         return this.http.put<PreguntaLow>(`${this.urlEndPoint}/update/${PreguntaLow.id_pregunta}`, PreguntaLow, { headers: this.httpHeaders })

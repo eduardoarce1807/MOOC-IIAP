@@ -9,7 +9,7 @@
             <div class="col-md-12">
                 <div class="my_courses_tabs">
                     <ul class="nav nav-pills my_crse_nav" id="pills-tab" role="tablist">
-                        <li class="col-lg-6 nav-item">
+                        <li class="col-lg-12 nav-item">
                             <a class="nav-link active" id="pills-my-courses-tab" data-toggle="pill"
                                 href="#pills-my-courses" role="tab" aria-controls="pills-my-courses"
                                 aria-selected="true"><i class="uil uil-book-alt"></i>Mis cursos</a>
@@ -30,19 +30,18 @@
                                             <th>Título</th>
                                             <th class="text-center" scope="col">Fecha de Registro</th>
                                             <th class="text-center" scope="col">Categoría</th>
-                                            <th class="text-center" scope="col">N° Módulos</th>
                                             <th class="text-center" scope="col">Estado</th>
                                             <th class="text-center" scope="col">Acciones</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td class="text-center">1</td>
-                                            <td>Título de Curso</td>
-                                            <td class="text-center">06 Noviembre 2020</td>
-                                            <td class="text-center"><a href="#">Categoría 1</a></td>
-                                            <td class="text-center">4</td>
-                                            <td class="text-center"><b class="course_active">Activo</b></td>
+                                        <tr *ngFor="let iC of cursos">
+                                            <td class="text-center">{{iC.ID_CURSO}}</td>
+                                            <td>{{iC.TITULO}}</td>
+                                            <td class="text-center">{{iC.FECHA_CREACION | date:'dd/MM/yyyy'}}</td>
+                                            <td class="text-center"><a href="#">{{categorias[iC.ID_CATEGORIA_FK-1].NOMBRE}}</a></td>
+                                            <td class="text-center" *ngIf="iC.ESTADO == '1'"><b class="course_active">Activo</b></td>
+                                            <td class="text-center" *ngIf="iC.ESTADO == '0'"><b class="course_active">Inactivo</b></td>
                                             <td class="text-center">
                                                 <a href="#" title="Edit" class="gray-s"><i
                                                         class="uil uil-edit-alt"></i></a>

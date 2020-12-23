@@ -34,6 +34,20 @@ export class InscripcionService {
         return this.http.get(`${this.urlEndPoint}/${id}`)
     }
 
+    // obteniendo datos por ID
+    getByIdCur(id: number): Observable<any> {
+        return this.http.get(`${this.urlEndPoint}/cur/${id}`)
+    }
+
+    // obteniendo datos por ID del usu
+    getByIdUsu(id: number): Observable<any> {
+        return this.http.get(`${this.urlEndPoint}/usu?id=${id}`)
+    }
+
+    getByIdCurIdUsu(idC: number, idU: number): Observable<any> {
+        return this.http.get(`${this.urlEndPoint}/usu-cur?idC=${idC}&idU=${idU}`)
+    }
+
     // metodo actualizar 
     update(InscripcionLow: InscripcionLow): Observable<InscripcionLow> {
         return this.http.put<InscripcionLow>(`${this.urlEndPoint}/update/${InscripcionLow.id_inscripcion}`, InscripcionLow, { headers: this.httpHeaders })

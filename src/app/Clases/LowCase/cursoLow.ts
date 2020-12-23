@@ -1,12 +1,12 @@
 export class CursoLow {
 
-    id_usuario: number;
+    id_curso: number;
     titulo: String;
     subtitulo: String;
     precio: number;
     ruta_img: String;
     ruta_vid: String;
-    url: String;
+    url: string;
     duracion: number;
     certificacion_tit: String;
     certificadora: String;

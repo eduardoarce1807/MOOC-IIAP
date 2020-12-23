@@ -1,7 +1,7 @@
 export class CertificadoLow {
 
-    id_certificado: number
+    codigo: String;
     estado: String;
-    id_registro_fk: number;
+    id_inscripcion_fk: number;
 
 }

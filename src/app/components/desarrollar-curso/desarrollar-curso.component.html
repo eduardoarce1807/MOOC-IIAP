@@ -1,0 +1,71 @@
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-8">
+            <iframe id="iframeX" width="100%" height="400" class="e2e-iframe-trusted-src" [src]="videoUrl"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+            <div id="eval" class="col-md-12" style="height: 400px; overflow-y: auto;">
+                <h3 id="titulo_e"></h3>
+                <div class="col-md-12">
+                    <div class="certi_form" style="margin-top: -1px;">
+                        <div id="contE" class="all_ques_lest">
+                        </div>
+                        <button class="test_submit_btn" type="submit">Enviar Respuestas</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4" style="height: 400px; overflow-y: auto;">
+            <div *ngFor="let iM of modulos" class="crse_content" style="margin-top: -1px;">
+                <h3>Módulo {{iM.ID_MODULO}} - {{iM.TITULO}}</h3>
+                <div id="accordion" class="ui-accordion ui-widget ui-helper-reset">
+                    <div *ngFor="let iS of sesiones">
+                        <a *ngIf="iS.ID_MODULO_FK == iM.ID_MODULO" href="javascript:void(0)"
+                            class="accordion-header ui-accordion-header ui-helper-reset ui-state-default ui-accordion-icons ui-corner-all">
+                            <div class="section-header">
+                                <span class="section-title-wrapper">
+                                    <i class='uil uil-presentation-play crse_icon'></i>
+                                    <span class="section-title-text" style="width: 100%;">{{iS.TITULO}}</span>
+                                </span>
+                            </div>
+                        </a>
+                        <div class="ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom">
+                            <div *ngFor="let iR_A of recs_ap">
+                                <div *ngIf="iR_A.ID_SESION_FK == iS.ID_SESION && iS.ID_MODULO_FK == iM.ID_MODULO"
+                                    class="lecture-container">
+                                    <div class="left-content">
+                                        <i *ngIf="iR_A.ID_TIPO_REC_AP_FK == 1 "
+                                            class='uil uil-play-circle icon_142'></i>
+                                        <i *ngIf="iR_A.ID_TIPO_REC_AP_FK == 2 " class='uil uil-file icon_142'></i>
+                                        <i *ngIf="iR_A.ID_TIPO_REC_AP_FK == 3 "
+                                            class='uil uil-clipboard-notes icon_142'></i>
+                                        <div *ngIf="iR_A.ID_TIPO_REC_AP_FK == 1 " class="top">
+                                            <div (click)="vRec_Ap(iR_A)" class="title">{{iR_A.TITULO}}</div>
+                                        </div>
+                                        <div *ngIf="iR_A.ID_TIPO_REC_AP_FK == 2 " class="top">
+                                            <div (click)="dRec_Ap(iR_A)" class="title">{{iR_A.TITULO}}</div>
+                                        </div>
+                                        <div *ngIf="iR_A.ID_TIPO_REC_AP_FK == 3 " class="top">
+                                            <div (click)="eRec_Ap(iR_A)" class="title">{{iR_A.TITULO}}</div>
+                                        </div>
+                                    </div>
+                                    <div class="details">
+                                        <div *ngFor="let tC_V of ctrl_vistas">
+                                            <div
+                                                *ngIf="ctrl_vistas.length>0 && tC_V.ID_REC_AP_FK == iR_A.ID_REC_AP && tC_V.VISTO == '1' && iR_A.ID_SESION_FK == iS.ID_SESION && iS.ID_MODULO_FK == iM.ID_MODULO">
+                                                <i style="color: rgb(0, 255, 0);"
+                                                    class='uil uil-check-circle icon_142'></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

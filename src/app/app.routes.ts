@@ -8,7 +8,8 @@ import {
     SettingsComponent,
     CourseDetailComponent,
     ExplorarComponent,
-    FeedbackComponent
+    FeedbackComponent,
+    DesarrollarCursoComponent
 } from './components/index.paginas';
 
 import {
@@ -47,11 +48,12 @@ const app_routes: Routes = [
     { path: 'cursos/:url', component: CourseDetailComponent },
     { path: 'cursos/curso-1', component: CourseDetailComponent },
     { path: 'cursos', component: ExplorarComponent },
+    { path: 'cursos/:url/desarrollar', component: DesarrollarCursoComponent },
 
     { path: 'home-instructor', component: DashboardInstructorComponent },
     { path: 'perfil-instructor-i', component: PerfilDocenteIComponent },
     { path: 'cursos-instructor', component: CoursesInstructorComponent },
-    { path: 'crear-curso', component: CreateCourseComponent },
+    { path: 'curso-form', component: CreateCourseComponent },
 
     { path: 'acerca-de', component: AboutUsComponent },
     { path: 'carrito', component: ShoppingCartComponent },

@@ -4,6 +4,11 @@ import { RolUsuService } from 'src/app/services/rol-usu.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { UsuarioService } from 'src/app/services/usuario.service';
 import { Usuario } from 'src/app/Clases/usuario';
+import { Curso } from 'src/app/Clases/curso';
+import { Categoria } from 'src/app/Clases/categoria';
+import { CursoService } from 'src/app/services/curso.service';
+import { InscripcionService } from 'src/app/services/inscripcion.service';
+import { Inscripcion } from 'src/app/Clases/inscripcion';
 
 declare var jQuery: any;
 declare var $: any;
@@ -18,17 +23,63 @@ export class InstructorProfilePublicComponent implements OnInit {
   usuA: any;
   usuario: Usuario = new Usuario();
 
+  inscripciones: Inscripcion[];
+  categorias: Categoria[];
+
+  cursos: Curso[];
+
   constructor(
     public rol_usuService: RolUsuService,
     private router: Router,
     private activatedRoute: ActivatedRoute,
-    private usuarioService: UsuarioService
+    private usuarioService: UsuarioService,
+    private cursoService: CursoService,
+    private inscripcionService: InscripcionService
   ) { }
+
+
+  cursosInscritos(): void {
+    var uActivo: any = localStorage.getItem("uActivo"); //Obtener datos de localStorage
+    uActivo = JSON.parse(uActivo); // Covertir a objeto
+    if (uActivo === null) {// Si no existe, creamos un array vacio.
+      uActivo = []; // es es un  array
+    } else {
+      this.usuA = JSON.parse(uActivo[0]);
+      this.inscripcionService.getByIdUsu(this.usuA.id_usuario).subscribe(
+        Inscripciones => {
+          this.inscripciones = Inscripciones['INSCRIPCIONES'];
+          console.log(this.inscripciones);
+          for(var i = 0; i<this.inscripciones.length; i++ ){
+            this.cursoService.get(this.inscripciones[i].ID_CURSO_FK).subscribe(
+              Curso => {
+                this.cursos.push(Curso['CURSOS'][0]);
+                console.log(this.cursos);
+              }
+            );
+          }
+        }
+      );
+    }
+
+  }
 
   ngOnInit(): void {
 
+    this.cargar();
     this.cargarUsuario();
+    this.cursosInscritos();
 
+    var uActivo: any = localStorage.getItem("uActivo"); //Obtener datos de localStorage
+    uActivo = JSON.parse(uActivo); // Covertir a objeto
+    if (uActivo === null) {// Si no existe, creamos un array vacio.
+      uActivo = []; // es es un  array
+    } else {
+      this.usuA = JSON.parse(uActivo[0]);
+    }
+
+  }
+
+  cargar(): void {
     $("#config").hide();
 
     $("#hdr-est").show();
@@ -47,15 +98,6 @@ export class InstructorProfilePublicComponent implements OnInit {
     $("#ftr-iiap").remove();
 
     $('#wrpr').addClass('wrapper _bg4586');
-
-    var uActivo: any = localStorage.getItem("uActivo"); //Obtener datos de localStorage
-    uActivo = JSON.parse(uActivo); // Covertir a objeto
-    if (uActivo === null) {// Si no existe, creamos un array vacio.
-      uActivo = []; // es es un  array
-    }else{
-      this.usuA = JSON.parse(uActivo[0]);
-    }
-
 
     // === Dropdown === //
 
@@ -335,7 +377,6 @@ export class InstructorProfilePublicComponent implements OnInit {
 
     })(window, document);
 
-
   }
 
   cargarUsuario(): void {
@@ -346,7 +387,7 @@ export class InstructorProfilePublicComponent implements OnInit {
           Usuario => {
             this.usuario = Usuario['USUARIOS'][0];
             console.log(this.usuario);
-            if(this.usuario.ID_USUARIO == this.usuA.id_usuario){
+            if (this.usuario.ID_USUARIO == this.usuA.id_usuario) {
               $("#config").show();
             }
           }
